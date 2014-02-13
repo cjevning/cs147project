@@ -1,32 +1,62 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Sun Feb 02 2014 09:47:31 GMT+0000 (UTC) -->
+<!-- Last Published: Wed Feb 05 2014 06:41:42 GMT+0000 (UTC) -->
 <html data-wf-site="52edd4c7672b98eb65000090">
-<head>
-  <meta charset="utf-8">
-  <title>Plantrain - Lifts</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="css/webflow.css">
-  <link rel="stylesheet" type="text/css" href="css/plantrain.webflow.css">
-  <script>
-    if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
-  </script>
-  <link rel="shortcut icon" type="image/x-icon" href="https://y7v4p6k4.ssl.hwcdn.net/placeholder/favicon.ico">
-  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-</head>
-<body>
-  <div class="w-nav" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1">
-    <div class="w-container">
-      <a class="w-nav-brand" href="#"></a>
-      <nav class="w-nav-menu" role="navigation"><a class="w-nav-link" href="#">Home</a><a class="w-nav-link" href="#">About</a><a class="w-nav-link" href="#">Contact</a><a class="w-nav-link" href="#">Nav Link 4</a>
-      </nav>
-      <div class="w-nav-button">
-        <div class="w-icon-nav-menu"></div>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="js/webflow.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Plantrain - Lifts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <script>
+      if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
+    </script>
+    <script src="js/jQuery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://y7v4p6k4.ssl.hwcdn.net/placeholder/favicon.ico">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="w-nav" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" id="top"></div>
+    <script type="text/javascript" src="js/webflow.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav" role="navigation">
+      <div class="container-fluid" id="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="btn-toolbar toolbar-override" role="toolbar">
+          <div class="btn-group navbar-toggle group-override" id="backButton" onclick="history.back()"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-hand-left"></span></td></tr></table></div>
+          <div class="btn-group navbar-toggle group-override" id="pageName"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="title">My Lifts</span></td></tr></table></div>
+          <div class="btn-group navbar-toggle group-override" id="searchButton" onclick="toggle();"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-search" id="searchSpan"></span></td></tr></table></div>
+          <div class="btn-group navbar-toggle group-override" id="menuButton" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-align-justify"></span></td></tr></table></div>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse popup2" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropLink"><a href="index.html">Home</a></li>
+            <li class="dropLink"><a href="liftlists.html">LiftLists</a></li>
+            <li class="dropLink"><a href="store.html">Store</a></li>
+            <li class="dropLink"><a href="placeholder.html">My History</a></li>
+            <li class="dropLink"><a href="placeholder.html">Help</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+        <div class="searchBarDiv" id="searchBarDiv">
+          <div class="form-group">
+            <div class="pull-right searchBar">
+              <form class="navbar-form" role="search">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                  <div class="input-group-btn">
+                    <button class="btn btn-default button7" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div id="tableDiv"></div>
+    <script type="text/javascript" src="js/populateLifts.js"></script>
+    <script src="js/hopscotch-0.1.2.js"></script>
+    <script src="js/liftsTour.js"></script>
+  </body>
 </html>

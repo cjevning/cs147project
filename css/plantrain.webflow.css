@@ -46,7 +46,7 @@ p {
 .button {
   display: inline-block;
   padding: 4px 15px;
-  background-color: black;
+  background-color: #ed730e;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -58,32 +58,31 @@ p {
   .button {
     display: block;
     width: 50%;
+    height: 10%;
     margin-right: auto;
     margin-left: auto;
+    padding: 5%;
     border-radius: 10px;
-    background-color: #ed730e;
+    background-color: ##ed730e;
     font-family: Georgia, serif;
+    font-size: 150%;
     font-weight: 700;
   }
+  
   .logo {
-    height: 50%;
+    height: 40%;
   }
-  .lifts {
-    margin-top: 0%;
-    margin-bottom: 0%;
-    padding-top: 10%;
-    padding-bottom: 8%;
-  }
-  .shuffle {
-    margin-top: 0%;
-    margin-bottom: 0%;
-    padding-top: 8%;
-    padding-bottom: 8%;
-  }
-  .lists {
-    margin-top: 0%;
-    margin-bottom: 0%;
-    padding-top: 8%;
-    padding-bottom: 8%;
-  }
+  
+
+
 }
+
+#liftsTable {
+    border:1px;
+    width: 100%;
+  }
+
+  #listsTable {
+    border: 1px;
+    width: 100%;
+  }

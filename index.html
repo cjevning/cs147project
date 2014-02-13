@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Sun Feb 02 2014 09:47:31 GMT+0000 (UTC) -->
+<!-- Last Published: Wed Feb 05 2014 06:41:42 GMT+0000 (UTC) -->
 <html data-wf-site="52edd4c7672b98eb65000090">
 <head>
   <meta charset="utf-8">
   <title>Plantrain</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="css/webflow.css">
-  <link rel="stylesheet" type="text/css" href="css/plantrain.webflow.css">
+  <link rel="stylesheet" type="text/css" href="css/master.css">
   <script>
     if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
   </script>
@@ -16,14 +14,19 @@
   <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 </head>
 <body>
-  <header class="logo"></header>
-  <div class="lifts"><a class="button liftbutton" href="lifts.html">Lifts</a>
+  
+  <div class="logo"><img id="Jim" src="./images/gym.png"></img></div>
+  <div class="buttonDiv"><a class="button" href="lifts.html" id="liftButton">Lifts</a>
   </div>
-  <div class="lists"><a class="button liftlistbutton" href="liftlists.html">LiftLists</a>
+  <div class="buttonDiv"><a class="button liftlistbutton" href="liftlists.html" id="listButton">LiftLists</a>
   </div>
-  <div class="shuffle"><a class="button shufflebutton" href="placeholder.html">Shuffle</a>
+  <div class="buttonDiv"><a class="button shufflebutton" href="placeholder.html" id="shuffleButton">Shuffle</a>
   </div>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <div class="buttonDiv"><a class="button storbutton" href="liftlists.html" id="storeButton">Store</a>
+  </div>
+  <script type="text/javascript" src="js/jQuery.js"></script>
   <script type="text/javascript" src="js/webflow.js"></script>
+  <script src="js/hopscotch-0.1.2.js"></script>
+  <script src="js/homeTour.js"></script>
 </body>
 </html>

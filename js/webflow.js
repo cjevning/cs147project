@@ -851,11 +851,11 @@ Webflow.define('webflow-forms', function ($, _) {
     }
     
     // Show or hide status divs
-    data.done.toggleClass('w-form-done-show', success);
-    data.fail.toggleClass('w-form-fail-show', !success);
+    data.done.toggle(success);
+    data.fail.toggle(!success);
     
     // Hide form on success
-    success && form.addClass('w-hidden');
+    form.toggle(!success);
     
     // Reset data and enable submit button
     reset(data);
