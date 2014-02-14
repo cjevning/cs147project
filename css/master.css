@@ -6,26 +6,28 @@
 @import url(hopscotch-0.1.2.css);
 
 .liftButton {
-	min-width: 20px;
-	min-height: 20px;
+	width: 10%;
+  height:100%;
 }
 
 .listButton {
-	min-width: 20px;
-	min-height: 20px;
+	width: 10%;
+  height:100%;
 }
 
 .addButton {
-	min-width: 20px;
-	min-height: 20px;
+	width: 10%;
+  height:100%;
 }
 
 .liftName {
-	width: 75%;
+	width: 90%;
+  height: 100%;
 }
 
 .listName {
-	width: 75%;
+	width: 90%;
+  height: 100%;
 }
 
 .popup {
@@ -48,22 +50,20 @@
   min-width: 45%;
 }
 
-.myButton {
-  background-image: url(../images/menu.png);
+.dropDown {
+  width: 10%;
+  background-image: url(../images/expand.png);
   background-size: 90%;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
-.addButton {
+.plusButton {
+  width: 10%;
   background-image: url(../images/plus.png);
-  background-size: 70%;
-  background-repeat: no-repeat;
+  background-size: 80%;
   background-position: center;
-}
-
-.button {
-	background-color: #ed730e;
+  background-repeat: no-repeat;
 }
 
 .plusLink {
@@ -133,6 +133,15 @@
   font-weight: bold;
 }
 
+.accHeight {
+  height: 100%;
+  margin: 0px;
+}
+
+.panel {
+  border: 0px;
+}
+
 #pageName:hover {
   background-color: #FFF;
 }
@@ -141,9 +150,8 @@
   width: 100%;
   position: absolute;
   height: 7vh;
-  padding-right: 2%;
-  padding-left: 2%;
   border: 0px;
+  padding: 0px;
 }
 
 .glyphicon {
@@ -226,6 +234,7 @@
 
 .force7 {
   min-height: 7vh;
+
 }
 
 .hopscotch-bubble-container {
@@ -236,4 +245,33 @@
 
 .hopscotch-bubble {
   width: 100%;
+}
+
+.panel {
+  margin: 0px;
+}
+
+.override {
+  padding: 0px;
+  margin: 0px;
+  min-height: 7vh;
+  width: 100%;
+}
+
+.rowName {
+  width: 90%;
+}
+
+.itemName {
+  height: 7vh;
+  line-height: 7vh;
+  padding-left: 3%;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
 }

@@ -908,8 +908,7 @@
         // bubble height to correctly calculate the bubble position.
         // Show it briefly offscreen to calculate height, then hide
         // it again.
-        el.style.top = '-9999px';
-        el.style.left = '-9999px';
+        
         utils.removeClass(el, 'hide');
         this.setPosition(step);
         utils.addClass(el, 'hide');

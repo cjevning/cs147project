@@ -5,11 +5,11 @@ var tour = {
       steps: [
         {
           title: "Welcome",
-          content: "Welcome to Gymplify! Let's get started...",
+          content: "Welcome to Gymplify! My name is Jim the Butler, and I'll be your guide. Let's get started...",
           target: "Jim",
           placement: "bottom",
           xOffset: 'center',
-          arrowOffset: 'center'
+          arrowOffset: '46%'
         },
         {
           title: "Lifts",
@@ -17,7 +17,7 @@ var tour = {
           target: "liftButton",
           placement: "top",
           xOffset: 'center',
-          arrowOffset: 'center'
+          arrowOffset: '46%'
         },
         {
           title: "LiftLists",
@@ -25,7 +25,7 @@ var tour = {
           target: "listButton",
           placement: "top",
           xOffset: 'center',
-          arrowOffset: 'center'
+          arrowOffset: '46%'
         },
         {
           title: "Shuffle",
@@ -33,7 +33,7 @@ var tour = {
           target: "shuffleButton",
           placement: "top",
           xOffset: 'center',
-          arrowOffset: 'center'
+          arrowOffset: '46%'
         },
         {
           title: "Store",
@@ -41,7 +41,7 @@ var tour = {
           target: "storeButton",
           placement: "top",
           xOffset: 'center',
-          arrowOffset: 'center'
+          arrowOffset: '46%'
         },
       ]
     };

@@ -28,25 +28,14 @@ var toggle = function() {
   }
 }
 
-var openMenu = "";
 
 $(document).click(function() {
-  name = event.target.name;
-  if (name == "undefined") {
-    var par = event.target.parentElement.parentElement.parentElement.parentElement;
-    if ($(par).hasClass("menuButton")) {
-      name = "#bs-example-navbar-collapse-1";
-    }
-    else {
-      name = par.name;
-    }
+  if($("#bs-example-navbar-collapse-1").hasClass('in')) {
+    $("#bs-example-navbar-collapse-1").collapse("hide");
   }
-  closeMenu(name);
 });
 
-function closeMenu(name) {
-  if($(openMenu).hasClass('in')) {
-    $(openMenu).collapse("hide");
-  }
-  openMenu = name;
+
+function expand () {
+
 }
