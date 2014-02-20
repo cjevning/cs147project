@@ -1,0 +1,277 @@
+@import url(normalize.css);
+@import url(webflow.css);
+@import url(plantrain.webflow.css);
+@import url(bootstrap.css);
+@import url(bootstrap-theme.css);
+@import url(hopscotch-0.1.2.css);
+
+.liftButton {
+	width: 10%;
+  height:100%;
+}
+
+.listButton {
+	width: 10%;
+  height:100%;
+}
+
+.addButton {
+	width: 10%;
+  height:100%;
+}
+
+.liftName {
+	width: 90%;
+  height: 100%;
+}
+
+.listName {
+	width: 90%;
+  height: 100%;
+}
+
+.popup {
+  position: absolute;
+  background-color:rgba(200, 200, 200, 1.0);
+  right: 0px;
+  z-index: 5;
+  margin: 0px;
+  min-width: 25%;
+}
+
+.popup2 {
+  position: absolute;
+  background-color:rgba(200, 200, 200, 1.0);
+  right: 0px;
+  top: 100%;
+  z-index: 5;
+  margin: 0px;
+  border: 0px;
+  min-width: 45%;
+}
+
+.dropDown {
+  width: 10%;
+  background-image: url(../images/expand.png);
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.plusButton {
+  width: 10%;
+  background-image: url(../images/plus.png);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.plusLink {
+	width: 100%;
+	height: 100%;
+}
+
+.backButton {
+	cursor: pointer;
+}
+
+.searchbutton {
+	display: inline-block;
+}
+
+.hiddenHelp {
+	display: none;
+}
+
+.logo {
+	height: 40%;
+  width: 100%;
+}
+
+.logo img{
+  margin-top: 2px;
+	height:100%;
+  width: 100%;
+}
+
+.buttonDiv {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+
+.searchBar {
+	width: 100%;
+  height: 100%;
+}
+
+#searchBarDiv {
+  height: 7vh;
+  display: none;
+}
+
+* {
+	font-family: "Lucida Bright", Georgia, serif;
+}
+
+.group-override {
+  margin: 0px;
+  width: 12%;
+  height: 100%;
+}
+
+.btn-toolbar > .btn-group {
+  margin-left: 0px;
+ 
+}
+
+#pageName {
+  width: 64%;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.accHeight {
+  height: 100%;
+  margin: 0px;
+}
+
+.panel {
+  border: 0px;
+}
+
+#pageName:hover {
+  background-color: #FFF;
+}
+
+.container-fluid {
+  width: 100%;
+  position: absolute;
+  height: 7vh;
+  border: 0px;
+  padding: 0px;
+}
+
+.glyphicon {
+  vertical-align: middle;
+  top: 0;
+  line-height: 0;
+}
+
+.btn-toolbar {
+  margin-left: 0px;
+}
+
+.form-group {
+  margin: 0px;
+  height: 100%;
+}
+
+.navbar-form {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  height: 100%;
+}
+
+.input-group {
+  height: 7vh;
+}
+
+.input-group-btn {
+  height: 7vh;
+}
+
+.srch-term {
+  height: 3%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.navbar {
+  min-height: 0px;
+}
+
+
+#tableDiv {
+  position: absolute;
+  top: 7%;
+  width: 100%;
+}
+
+#nav {
+  height: 7%;
+  margin: 0px;
+}
+
+.navbar-toggle {
+  padding: 0px;
+}
+
+.toolbar-override{
+  height: 100%;
+}
+
+.form-control {
+  height: 7vh;
+}
+
+.nonexist {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 100%;
+}
+
+.button7 {
+  height: 7vh;
+}
+
+.force7 {
+  min-height: 7vh;
+
+}
+
+.hopscotch-bubble-container {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.hopscotch-bubble {
+  width: 100%;
+}
+
+.panel {
+  margin: 0px;
+}
+
+.override {
+  padding: 0px;
+  margin: 0px;
+  min-height: 7vh;
+  width: 100%;
+}
+
+.rowName {
+  width: 90%;
+}
+
+.itemName {
+  height: 7vh;
+  line-height: 7vh;
+  padding-left: 3%;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
