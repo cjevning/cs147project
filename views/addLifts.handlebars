@@ -24,7 +24,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="btn-toolbar toolbar-override" role="toolbar">
           <div class="btn-group navbar-toggle group-override" id="backButton" onclick="history.back()"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-hand-left"></span></td></tr></table></div>
-          <div class="btn-group navbar-toggle group-override" id="pageName"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="title">Store - Lifts</span></td></tr></table></div>
+          <div class="btn-group navbar-toggle group-override" id="pageName"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="title">Add Lifts</span></td></tr></table></div>
           <div class="btn-group navbar-toggle group-override" id="searchButton" onclick="toggle();"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-search" id="searchSpan"></span></td></tr></table></div>
           <div class="btn-group navbar-toggle group-override" id="menuButton" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-align-justify"></span></td></tr></table></div>
         </div>
@@ -32,8 +32,8 @@
         <div class="collapse navbar-collapse popup2" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="dropLink"><a href="index">Home</a></li>
-            <li class="dropLink"><a href="lifts">Lifts</a></li>
             <li class="dropLink"><a href="liftlists">LiftLists</a></li>
+            <li class="dropLink"><a href="store">Store</a></li>
             <!--
             <li class="dropLink"><a href="placeholder.html">My History</a></li>
             <li class="dropLink"><a href="placeholder.html">Help</a></li>
@@ -78,97 +78,28 @@
       {{#each lifts}}
       <div class="panel panel-default accHeight">
         <div class="panel-heading override">
-          <table class="override" data-toggle="collapse" data-parent="#accordion" href="#collapse{{id}}">
-            <tr class="override">
+          <table class="override" data-toggle="collapse" data-parent="#accordion" >
+            <script type="text/javascript">function addLift() {
+              var listID = req.params.id;
+  var liftID = $(event.target).closest('.addButton').attr('id');
+  var url_call = '/liftlists/addTo/'+listID + '/' +liftID;
+  $.post(url_call);
+}</script>
+            <tr class="override" onclick="addLift()">
               <td class="rowName override" id="row{{id}}">
                 <div class="override itemName">
                   {{name}}
                 </div>
               </td>
-              <td class="dropDown">                  
+              <td class="buttonCell">  
+              <div class="setButton deleteButton">
+              </div>                
               </td>
             </tr>
           </table>
         </div>
       </div>
-      <div id="collapse{{id}}" class="panel-collapse collapse">
-        <div class="panel-body">
-          <div class="expandedLift">
-            <div class="statsContainer">
-              <table class="liftStats">
-                <tr class="storeRow">
-                  <td class="buttonCell" onclick="deleteSet()">
-                    <div class="title">
-                      Main Muscle:
-                    </div>
-                  </td>
-                  <td class="setInfo">
-                    <div class="set">
-                      {{mainMuscle}}
-                    </div>
-                  </td>
-                </tr>
-                <tr class="storeRow">
-                  <td class="buttonCell" onclick="deleteSet()">
-                    <div class="title">
-                      Exercise Type:
-                    </div>
-                  </td>
-                  <td class="setInfo">
-                    <div class="set">
-                      {{excerciseType}}
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <div class="buttonsContainer">
-              <table class="liftButtons">
-                <tr class="innerLiftButton">
-                  <td class="innerLiftButton">
-                    <script type="text/javascript">function addLift() {
-  var liftID = $(event.target).closest('.addButton').attr('id');
-  var url_call = '/store/addLift/'+liftID;
-  $.post(url_call);
-}</script>
-                    <div class="innerLiftButton addButton" onclick="addLift()" id="{{id}}">
-                    </div>
-                  </td>
-                </tr>
-                <!--
-                <tr class="innerLiftButton">
-                  <td class="innerLiftButton">
-                    <div class="innerLiftButton viewButton">
-                    </div>
-                  </td>
-                </tr>
-              -->
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
       {{/each}}
-      <div class="panel-group accHeight" id="accordion">
-        <div class="panel panel-default accHeight">
-          <div class="panel-heading override">
-            <a class="invis" href="placeholder.html">
-              <table class="override">
-                <tr class="override">
-                  <td class="rowName override" id="rowLast">
-                    <div class="override itemName">Get More Lifts...</div>
-                  </td>
-                  <td class="plusButton"></td>
-                </tr>
-              </table>
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
-    <!--
-    <script src="js/hopscotch-0.1.2.js"></script>
-    <script src="js/liftsTour.js"></script>
-  -->
   </body>
 </html>

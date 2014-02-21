@@ -1,6 +1,11 @@
-var lists = require('../lists.json');
-
+var models = require('../models');
 
 exports.view = function(req, res){
-  res.render('liftlists', lists);
+	var username = req.session.username;
+	var user = models.User.find({"username": username}).exec(afterQuery);
+
 };
+
+exports.create = function(req, res) {
+	
+}

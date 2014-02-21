@@ -24,8 +24,16 @@ exports.view = function(req, res){
 
 exports.addLift = function(req, res) {
   var username = req.session.username;
-  var user = models.User.find({"username": username}).exec(afterQuery);
+  var id = req.params.id;
 
-  //Do the rest of this
-
+  var user = models.User.find().exec(afterQuery);
+  function afterQuery(err, u) {
+    if(err) console.log(err);
+    u[0].lifts.push(id);
+    console.log(u[0]);
+    console.log(u[0].lifts);
+    console.log("WTF");
+    u[0].save();
+    res.send();
+  } 
 }

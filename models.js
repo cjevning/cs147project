@@ -9,15 +9,15 @@ var LiftSchema = new Mongoose.Schema({
 
 var LiftListSchema = new Mongoose.Schema({
 	"name": String,
-	"lifts": [], 
+	"lifts": [String], 
 	"lastDone": Date, 
 });
 
 var UserSchema = new Mongoose.Schema({
 	"username": String,
-	"lifts": [], 
-	"liftlists": [], 
-	"history": []
+	"lifts": [String], 
+	"liftlists": [String], 
+	"history": [String]
 });
 
 var HistorySchema = new Mongoose.Schema({

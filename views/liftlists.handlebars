@@ -4,7 +4,7 @@
 <html data-wf-site="52edd4c7672b98eb65000090">
   <head>
     <meta charset="utf-8">
-    <title>Plantrain - Liftlists</title>
+    <title>Plantrain - LiftLists</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/master.css">
     <script>
@@ -26,16 +26,18 @@
           <div class="btn-group navbar-toggle group-override" id="backButton" onclick="history.back()"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-hand-left"></span></td></tr></table></div>
           <div class="btn-group navbar-toggle group-override" id="pageName"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="title">My LiftLists</span></td></tr></table></div>
           <div class="btn-group navbar-toggle group-override" id="searchButton" onclick="toggle();"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-search" id="searchSpan"></span></td></tr></table></div>
-          <div class="btn-group navbar-toggle group-override menuButton" id="menuButton" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><table class="nonexist menuButton"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-align-justify"></span></td></tr></table></div>
+          <div class="btn-group navbar-toggle group-override" id="menuButton" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-align-justify"></span></td></tr></table></div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse popup2" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="dropLink"><a href="index">Home</a></li>
             <li class="dropLink"><a href="lifts">Lifts</a></li>
-            <li class="dropLink"><a href="store.html">Store</a></li>
+            <li class="dropLink"><a href="store">Store</a></li>
+            <!--
             <li class="dropLink"><a href="placeholder.html">My History</a></li>
             <li class="dropLink"><a href="placeholder.html">Help</a></li>
+          -->
             <li class="dropLink"><a href="user_logout">Logout</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -53,9 +55,9 @@
             </div>
           </div>
         </div>
-      </div><!-- /.container-fluid -->   
+      </div><!-- /.container-fluid -->
     </nav>
-    <div id="tableDiv" name="LiftLists">
+    <div id="tableDiv" name="Lift">
       <div class="panel-group accHeight" id="accordion">
         <div class="panel panel-default accHeight">
           <div class="panel-heading override">
@@ -79,10 +81,10 @@
             <tr class="override">
               <td class="rowName override" id="row{{id}}">
                 <div class="override itemName">
-                  {{list}}
+                  {{name}}
                 </div>
               </td>
-              <td class="dropDown">
+              <td class="dropDown">                  
               </td>
             </tr>
           </table>
@@ -90,10 +92,60 @@
       </div>
       <div id="collapse{{id}}" class="panel-collapse collapse">
         <div class="panel-body">
-          awesome sauce stuff goes here
+          <div class="expandedLift">
+            <div class="statsContainer">
+              <table class="liftStats">
+                <tr class="setRow set">
+                  <td class="buttonCell" onclick="deleteSet()">
+                    <div class="setButton deleteButton">
+                    </div>
+                  </td>
+                  <td class="setInfo">
+                    <div class="set">
+                      <input type="number" class="full" name="quantity" min="1" max="999"> Reps <input type="number" class="full" name="diff" min="0" max="999"> lbs.
+                    </div>
+                  </td>
+                </tr>
+                <tr class="setRow add" onclick="addSet()">
+                  <td class="buttonCell">
+                    <div class="setButton addButton">
+                    </div>
+                  </td>
+                  <td class="setInfo">
+                    <div class="set">
+                      Add a Set
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="buttonsContainer">
+              <table class="liftButtons">
+                <tr class="innerLiftButton">
+                  <td class="innerLiftButton">
+                    <div class="innerLiftButton addButton">
+                    </div>
+                  </td>
+                </tr>
+                <tr class="innerLiftButton">
+                  <td class="innerLiftButton">
+                    <div class="innerLiftButton viewButton">
+                    </div>
+                  </td>
+                </tr>
+                <tr class="innerLiftButton">
+                  <td class="innerLiftButton">
+                    <div class="innerLiftButton doneButton">
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
       {{/each}}
+      <!--
       <div class="panel-group accHeight" id="accordion">
         <div class="panel panel-default accHeight">
           <div class="panel-heading override">
@@ -101,7 +153,7 @@
               <table class="override">
                 <tr class="override">
                   <td class="rowName override" id="rowLast">
-                    <div class="override itemName">Get More LiftLists...</div>
+                    <div class="override itemName">Get More Lifts...</div>
                   </td>
                   <td class="plusButton"></td>
                 </tr>
@@ -110,9 +162,9 @@
           </div>
         </div>
       </div>
+    -->
     </div>
-    <script type="text/javascript" src="js/populateTable.js"></script>
     <script src="js/hopscotch-0.1.2.js"></script>
-    <script src="js/listsTour.js"></script>
+    <script src="js/liftsTour.js"></script>
   </body>
 </html>
