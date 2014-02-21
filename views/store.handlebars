@@ -24,7 +24,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="btn-toolbar toolbar-override" role="toolbar">
           <div class="btn-group navbar-toggle group-override" id="backButton" onclick="history.back()"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-hand-left"></span></td></tr></table></div>
-          <div class="btn-group navbar-toggle group-override" id="pageName"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="title">My Lifts</span></td></tr></table></div>
+          <div class="btn-group navbar-toggle group-override" id="pageName"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="title">Store - Lifts</span></td></tr></table></div>
           <div class="btn-group navbar-toggle group-override" id="searchButton" onclick="toggle();"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-search" id="searchSpan"></span></td></tr></table></div>
           <div class="btn-group navbar-toggle group-override" id="menuButton" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-align-justify"></span></td></tr></table></div>
         </div>
@@ -80,7 +80,7 @@
             <tr class="override">
               <td class="rowName override" id="row{{id}}">
                 <div class="override itemName">
-                  {{lift}}
+                  {{name}}
                 </div>
               </td>
               <td class="dropDown">                  
@@ -94,25 +94,27 @@
           <div class="expandedLift">
             <div class="statsContainer">
               <table class="liftStats">
-                <tr class="setRow set">
+                <tr class="storeRow">
                   <td class="buttonCell" onclick="deleteSet()">
-                    <div class="setButton deleteButton">
+                    <div class="title">
+                      Main Muscle:
                     </div>
                   </td>
                   <td class="setInfo">
                     <div class="set">
-                      <input type="number" class="full" name="quantity" min="1" max="999"> Reps <input type="number" class="full" name="diff" min="0" max="999"> lbs.
+                      {{mainMuscle}}
                     </div>
                   </td>
                 </tr>
-                <tr class="setRow add" onclick="addSet()">
-                  <td class="buttonCell">
-                    <div class="setButton addButton">
+                <tr class="storeRow">
+                  <td class="buttonCell" onclick="deleteSet()">
+                    <div class="title">
+                      Exercise Type:
                     </div>
                   </td>
                   <td class="setInfo">
                     <div class="set">
-                      Add a Set
+                      {{excerciseType}}
                     </div>
                   </td>
                 </tr>
@@ -122,22 +124,18 @@
               <table class="liftButtons">
                 <tr class="innerLiftButton">
                   <td class="innerLiftButton">
-                    <div class="innerLiftButton addButton">
+                    <div class="innerLiftButton addButton" onclick="addLift()" id="{{id}}">
                     </div>
                   </td>
                 </tr>
+                <!--
                 <tr class="innerLiftButton">
                   <td class="innerLiftButton">
                     <div class="innerLiftButton viewButton">
                     </div>
                   </td>
                 </tr>
-                <tr class="innerLiftButton">
-                  <td class="innerLiftButton">
-                    <div class="innerLiftButton doneButton">
-                    </div>
-                  </td>
-                </tr>
+              -->
               </table>
             </div>
           </div>
@@ -161,7 +159,9 @@
         </div>
       </div>
     </div>
+    <!--
     <script src="js/hopscotch-0.1.2.js"></script>
     <script src="js/liftsTour.js"></script>
+  -->
   </body>
 </html>

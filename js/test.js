@@ -36,6 +36,8 @@ $(document).click(function() {
 });
 
 
-function expand () {
-
+function addLift () {
+  var liftID = $(event.target).closest('.addButton').attr('id');
+  var url_call = '/store/addLift'+liftID;
+  $.get(url_call);
 }

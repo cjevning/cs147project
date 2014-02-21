@@ -14,7 +14,8 @@
   <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 </head>
 <body>
-  
+  <script type="text/javascript" src="js/jQuery.js"></script>
+  <script type="text/javascript" src="js/webflow.js"></script>
   <div class="logo"><img id="Jim" src="./images/gym.png"></img></div>
   {{#if username}}
     <div class="buttonDiv"><a class="button" href="lifts" id="liftButton">Lifts</a>
@@ -23,9 +24,15 @@
     </div>
     <div class="buttonDiv"><a class="button shufflebutton" href="placeholder.html" id="shuffleButton">Shuffle</a>
     </div>
-    <div class="buttonDiv"><a class="button storbutton" href="liftlists.html" id="storeButton">Store</a>
+    <div class="buttonDiv"><a class="button storbutton" href="store" id="storeButton">Store</a>
     </div>
+    <a href="user_logout">Logout</a>
+  <script src="js/hopscotch-0.1.2.js"></script>
+  <script src="js/homeTour.js"></script>
   {{else}}
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
     <form id="username-form" action="user_login" role="form">
       <div class="form-group">
         <label for="title">Please Sign In</label>
@@ -33,10 +40,8 @@
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
+    <a href="create">Create Account</a>
   {{/if}}
-  <script type="text/javascript" src="js/jQuery.js"></script>
-  <script type="text/javascript" src="js/webflow.js"></script>
-  <script src="js/hopscotch-0.1.2.js"></script>
-  <script src="js/homeTour.js"></script>
+  
 </body>
 </html>
