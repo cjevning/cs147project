@@ -14,7 +14,7 @@ exports.login = function(req, res) {
 			  res.redirect('/');
 		}
 		else {
-			req.session.errorMessage = "That user doesn't exist!";
+			req.session.errorMessage = "That user doesn't exist! If you'd like, you can create an account below.";
 			res.redirect('/');
 		}
 	}

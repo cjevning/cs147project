@@ -31,7 +31,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse popup2" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="dropLink"><a href="index">Home</a></li>
+            <li class="dropLink"><a href="/">Home</a></li>
             <li class="dropLink"><a href="lifts">Lifts</a></li>
             <li class="dropLink"><a href="store">Store</a></li>
             <!--
@@ -58,28 +58,55 @@
       </div><!-- /.container-fluid -->
     </nav>
     <div id="tableDiv" name="Lift">
-      <div class="panel-group accHeight" id="accordion">
+      <div class="panel-group" id="accordion">
         <div class="panel panel-default accHeight">
           <div class="panel-heading override">
-            <a class="invis" href="placeholder.html">
-              <table class="override">
-                <tr class="override">
-                  <td class="rowName override" id="row0">
-                    <div class="override itemName">Create a LiftList</div>
-                  </td>
-                  <td class="plusButton"></td>
-                </tr>
-              </table>
-            </a>
+            <table class="override" data-toggle="collapse" data-parent="#accordion" href="#collapseCreate">
+              <tr class="override">
+                <td class="rowName override" id="rowFirst">
+                  <div class="override itemName">
+                    Create a LiftList
+                  </div>
+                </td>
+                <td class="dropDown">                  
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
-      </div>
+        <div id="collapseCreate" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="expandedList">
+              <div class="statsContainer">
+                <form id="new-list-form" role="form">
+                  <div class="form-group">
+                    <label for="title">Title for LiftList:</label>
+                    <input type="text" class="form-control" id="title" placeholder="LiftList">
+                  </div>
+                  <button id="newListSubmitButton" type="button" class="btn btn-default" onclick="createList()">Create and Start Adding Lifts</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      <script type="text/javascript">
+        var count = 0;
+      </script>
+      
       {{#each lists}}
       <div class="panel panel-default accHeight">
         <div class="panel-heading override">
-          <table class="override" data-toggle="collapse" data-parent="#accordion" href="#collapse{{id}}">
+          <script>
+            document.write("<table class=\"override\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + count + "\">");
+          </script>
+          <!--<table class="override" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= count %>">-->
             <tr class="override">
-              <td class="rowName override" id="row{{id}}">
+              <script>
+                document.write("<td class=\"rowName override\" id=\"row" + count + "\">");
+              </script>
+              <!--<td class="rowName override" id="row<%= count %>">-->
                 <div class="override itemName">
                   {{name}}
                 </div>
@@ -90,53 +117,34 @@
           </table>
         </div>
       </div>
-      <div id="collapse{{id}}" class="panel-collapse collapse">
+
+      <script>
+        document.write("<div id=\"collapse" + count + "\" class=\"panel-collapse collapse\">");
+      </script>
+      <!--<div id="collapse<%= count %>" class="panel-collapse collapse">-->
         <div class="panel-body">
-          <div class="expandedLift">
+          <div class="expandedList">
             <div class="statsContainer">
-              <table class="liftStats">
-                <tr class="setRow set">
-                  <td class="buttonCell" onclick="deleteSet()">
-                    <div class="setButton deleteButton">
-                    </div>
-                  </td>
-                  <td class="setInfo">
-                    <div class="set">
-                      <input type="number" class="full" name="quantity" min="1" max="999"> Reps <input type="number" class="full" name="diff" min="0" max="999"> lbs.
-                    </div>
-                  </td>
-                </tr>
-                <tr class="setRow add" onclick="addSet()">
-                  <td class="buttonCell">
-                    <div class="setButton addButton">
-                    </div>
-                  </td>
-                  <td class="setInfo">
-                    <div class="set">
-                      Add a Set
-                    </div>
-                  </td>
-                </tr>
-              </table>
+                <script type="text/javascript">
+                  var last = '{{lastDone}}';
+                  var sp = last.split(" ");
+                  var year = sp[3];
+                  var x = "Never";
+                  if (year != '1992') {
+                    x = sp[1] + " " + sp[2] + " " + sp[3];
+                  }
+                  document.write("<p>Last Done: " + x + "</p>");
+                </script>
+              
             </div>
             <div class="buttonsContainer">
               <table class="liftButtons">
                 <tr class="innerLiftButton">
                   <td class="innerLiftButton">
-                    <div class="innerLiftButton addButton">
-                    </div>
-                  </td>
-                </tr>
-                <tr class="innerLiftButton">
-                  <td class="innerLiftButton">
+                    <a class="invis" href="viewList/{{_id}}">
                     <div class="innerLiftButton viewButton">
                     </div>
-                  </td>
-                </tr>
-                <tr class="innerLiftButton">
-                  <td class="innerLiftButton">
-                    <div class="innerLiftButton doneButton">
-                    </div>
+                  </a>
                   </td>
                 </tr>
               </table>
@@ -144,27 +152,28 @@
           </div>
         </div>
       </div>
+      <script type="text/javascript">
+        count += 1;
+      </script>
       {{/each}}
       <!--
-      <div class="panel-group accHeight" id="accordion">
         <div class="panel panel-default accHeight">
           <div class="panel-heading override">
-            <a class="invis" href="placeholder.html">
+            <a class="invis" href="store">
               <table class="override">
                 <tr class="override">
                   <td class="rowName override" id="rowLast">
-                    <div class="override itemName">Get More Lifts...</div>
+                    <div class="override itemName">Get More LiftLists...</div>
                   </td>
                   <td class="plusButton"></td>
                 </tr>
               </table>
             </a>
           </div>
-        </div>
+        </div>-->
       </div>
-    -->
     </div>
     <script src="js/hopscotch-0.1.2.js"></script>
-    <script src="js/liftsTour.js"></script>
+    <script src="js/listsTour.js"></script>
   </body>
 </html>

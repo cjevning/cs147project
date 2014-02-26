@@ -38,6 +38,17 @@ $(document).click(function() {
 
 function addLift() {
   var liftID = $(event.target).closest('.addButton').attr('id');
+  var row = $(event.target).closest('.collapse');
+  row.removeClass("in");
   var url_call = '/store/addLift/'+liftID;
-  $.get(url_call);
+  $.post(url_call);
+};
+
+function createList() {
+                        var title = $('#new-list-form #title').val();
+    console.log("hello - " + title);
+    var json = {
+      'title': title,
+    };
+    $.post('/liftlists/create', json);
 }

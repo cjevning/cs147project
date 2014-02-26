@@ -16,7 +16,9 @@ var user = require('./routes/user');
 var create = require('./routes/create');
 var history = require('./routes/user_history');
 var store = require('./routes/store');
-//var add = require('./routes/addLifts');
+var add = require('./routes/addLifts');
+var list = require('./routes/listInProgress');
+var viewList = require('./routes/viewList');
 // Example route
 // var user = require('./routes/user');
 
@@ -59,10 +61,12 @@ app.get('/create', create.view);
 app.get('/user_history', history.view);
 app.get('/store', store.view);
 app.post('/store/addLift/:id', store.addLift);
-//app.get('/addLifts', addLifts.view);
-//app.get('/liftlists/create', liftlists.create);
-//app.get('/liftlists/addTo/:listID/:liftID', liftlists.addTo);
-
+app.get('/addLifts/:id', add.view);
+app.get('/liftlists/create/:name', liftlists.create);
+app.post('/liftlists/addTo/:listID/:liftID', liftlists.addTo);
+app.post('/liftlists/deleteFrom/:listID/:liftID', liftlists.deleteFrom);
+app.get('/listInProgress/:id', list.doList);
+app.get('/viewList/:id', viewList.view);
 // Example route
 // app.get('/users', user.list);
 

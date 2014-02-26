@@ -23,8 +23,8 @@ var UserSchema = new Mongoose.Schema({
 var HistorySchema = new Mongoose.Schema({
 	"liftName": String,
 	"date": Date, 
-	"reps": String, 
-	"weight": String
+	"reps": [String], 
+	"weight": [String]
 });
 
 exports.Lift = Mongoose.model('Lift', LiftSchema);

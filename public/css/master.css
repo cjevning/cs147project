@@ -133,6 +133,13 @@
   font-weight: bold;
 }
 
+#nonSearch {
+  width: 76%;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
 .accHeight {
   height: 100%;
   margin: 0px;
@@ -298,7 +305,6 @@ a:hover {
 }
 
 .liftButtons {
-  height: 18vh;
   width: 100%;
 }
 

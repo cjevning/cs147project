@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Wed Feb 05 2014 06:41:42 GMT+0000 (UTC) -->
+<html data-wf-site="52edd4c7672b98eb65000090">
+  <head>
+    <meta charset="utf-8">
+    <title>View List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/master.css">
+    <script>
+      if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
+    </script>
+    <script src="../js/jQuery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://y7v4p6k4.ssl.hwcdn.net/placeholder/favicon.ico">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="w-nav" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" id="top"></div>
+    <script type="text/javascript" src="../js/test.js"></script>
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav" role="navigation">
+      <div class="container-fluid" id="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="btn-toolbar toolbar-override" role="toolbar">
+          <div class="btn-group navbar-toggle group-override" id="backButton" onclick="history.back()"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-hand-left"></span></td></tr></table></div>
+          <div class="btn-group navbar-toggle group-override" id="nonSearch"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="title">{{name}}</span></td></tr></table></div>
+          
+          <div class="btn-group navbar-toggle group-override" id="menuButton" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-align-justify"></span></td></tr></table></div>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse popup2" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropLink"><a href="../">Home</a></li>
+            <li class="dropLink"><a href="../lifts">Lifts</a></li>
+            <li class="dropLink"><a href="../liftlists">LiftLists</a></li>
+            <li class="dropLink"><a href="../store">Store</a></li>
+            <!--
+            <li class="dropLink"><a href="placeholder.html">My History</a></li>
+            <li class="dropLink"><a href="placeholder.html">Help</a></li>
+          -->
+            <li class="dropLink"><a href="../user_logout">Logout</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div id="tableDiv" name="Lift" >
+      <div id="{{id}}" class="Cont">
+        <div class="btnCont">
+          <button id="startLift" type="button" class="btn btn-default" onclick="forwardToLIP()">Start List</button>
+        </div>
+        <div class="btnCont">
+          <button id="startLift" type="button" class="btn btn-default" onclick="forwardToAdd()">Add Lifts</button>
+        </div>
+        <script type="text/javascript">
+          var last = '{{lastDone}}';
+          var sp = last.split(" ");
+          var year = sp[3];
+          var x = "Never";
+          if (year != '1992') {
+            x = sp[1] + " " + sp[2] + " " + sp[3];
+          }
+          document.write("<p>Last Done: " + x + "</p>");
+        </script>
+        <script type="text/javascript">
+          var count = 0;
+        </script>
+        {{#each lifts}}
+          <div class="panel panel-default accHeight">
+            <div class="panel-heading override">
+              <script>
+                document.write("<table class=\"override\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + count + "\">");
+              </script>
+                <tr class="override">
+                  <script>
+                    document.write("<td class=\"rowName override\" id=\"row" + count + "\">");
+                  </script>
+                    <div class="override itemName">
+                      {{name}}
+                    </div>
+                  </td>
+                  <td class="dropDown">                  
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <script>
+            document.write("<div id=\"collapse" + count + "\" class=\"panel-collapse collapse\">");
+          </script>
+          <div id="{{id}}" class="idHolder">
+            <div class="panel-body">
+              <div class="expandedLift">
+                <div class="statsContainer">
+                  <table class="liftStats">
+                    
+                  </table>
+                </div>
+                <div class="buttonsContainer">
+                  <table class="liftButtons">
+                    <tr class="innerLiftButton">
+                      <td class="innerLiftButton">
+                        <div class="innerLiftButton deleteButton" onclick="deleteLiftFromList()">
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">
+          count += 1;
+        </script>
+        {{/each}}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -6,19 +6,19 @@
     <meta charset="utf-8">
     <title>Plantrain - Lifts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <link rel="stylesheet" type="text/css" href="../css/master.css">
     <script>
       if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
     </script>
-    <script src="js/jQuery.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="../js/jQuery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="https://y7v4p6k4.ssl.hwcdn.net/placeholder/favicon.ico">
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
     <div class="w-nav" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" id="top"></div>
-    <script type="text/javascript" src="js/webflow.js"></script>
-    <script type="text/javascript" src="js/test.js"></script>
+    <script type="text/javascript" src="../js/webflow.js"></script>
+    <script type="text/javascript" src="../js/test.js"></script>
     <nav class="navbar navbar-default navbar-fixed-top" id="nav" role="navigation">
       <div class="container-fluid" id="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -31,9 +31,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse popup2" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="dropLink"><a href="index">Home</a></li>
-            <li class="dropLink"><a href="liftlists">LiftLists</a></li>
-            <li class="dropLink"><a href="store">Store</a></li>
+            <li class="dropLink"><a href="../">Home</a></li>
+            <li class="dropLink"><a href="../liftlists">LiftLists</a></li>
+            <li class="dropLink"><a href="../store">Store</a></li>
             <!--
             <li class="dropLink"><a href="placeholder.html">My History</a></li>
             <li class="dropLink"><a href="placeholder.html">Help</a></li>
@@ -57,49 +57,80 @@
         </div>
       </div><!-- /.container-fluid -->
     </nav>
+
     <div id="tableDiv" name="Lift">
-      <!--
-      <div class="panel-group accHeight" id="accordion">
         <div class="panel panel-default accHeight">
           <div class="panel-heading override">
-            <a class="invis" href="placeholder.html">
+            <a class="invis" href="../liftlists">
               <table class="override">
                 <tr class="override">
-                  <td class="rowName override" id="row0">
-                    <div class="override itemName">Create a Lift</div>
+                  <td class="rowName override" id="rowLast">
+                    <div class="override itemName">Done Adding Lifts</div>
                   </td>
-                  <td class="plusButton"></td>
+                  <td class="doneButton"></td>
                 </tr>
               </table>
             </a>
           </div>
         </div>
-      </div>-->
+      <script type="text/javascript">
+        var count = 0;
+      </script>
+      <div class="panel-group" id="accordion">
       {{#each lifts}}
       <div class="panel panel-default accHeight">
         <div class="panel-heading override">
-          <table class="override" data-toggle="collapse" data-parent="#accordion" >
-            <script type="text/javascript">function addLift() {
-              var listID = req.params.id;
-  var liftID = $(event.target).closest('.addButton').attr('id');
-  var url_call = '/liftlists/addTo/'+listID + '/' +liftID;
-  $.post(url_call);
-}</script>
-            <tr class="override" onclick="addLift()">
-              <td class="rowName override" id="row{{id}}">
+          <script>
+            document.write("<table class=\"override\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + count + "\">");
+          </script>
+          <!--<table class="override" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= count %>">-->
+            <tr class="override">
+              <script>
+                document.write("<td class=\"rowName override\" id=\"row" + count + "\">");
+              </script>
+              <!--<td class="rowName override" id="row<%= count %>">-->
                 <div class="override itemName">
                   {{name}}
                 </div>
               </td>
-              <td class="buttonCell">  
-              <div class="setButton deleteButton">
-              </div>                
+              <td class="dropDown">                  
               </td>
             </tr>
           </table>
         </div>
       </div>
+      <script>
+        document.write("<div id=\"collapse" + count + "\" class=\"panel-collapse collapse\">");
+      </script>
+      <!--<div id="collapse<%= count %>" class="panel-collapse collapse">-->
+        <div class="panel-body">
+          <div class="expandedLift">
+            <div class="statsContainer">
+            </div>
+            <div class="buttonsContainer">
+              <table class="liftButtons">
+                <tr class="innerLiftButton" onclick="addToList()">
+                  <td class="innerLiftButton">
+                    <div class="innerLiftButton addButton" id="{{id}}">
+                    </div>
+                  </td>
+                </tr>
+                <tr class="innerLiftButton">
+                  <td class="innerLiftButton">
+                    <div class="innerLiftButton viewButton">
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        count += 1;
+      </script>
       {{/each}}
+      </div>
     </div>
   </body>
 </html>
