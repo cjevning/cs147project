@@ -67,6 +67,7 @@ app.post('/liftlists/addTo/:listID/:liftID', liftlists.addTo);
 app.post('/liftlists/deleteFrom/:listID/:liftID', liftlists.deleteFrom);
 app.get('/listInProgress/:id', list.doList);
 app.get('/viewList/:id', viewList.view);
+app.post('/user_history/:id/:name/:reps/:weight', history.addTo);
 // Example route
 // app.get('/users', user.list);
 

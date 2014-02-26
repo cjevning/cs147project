@@ -2,38 +2,140 @@
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Wed Feb 05 2014 06:41:42 GMT+0000 (UTC) -->
 <html data-wf-site="52edd4c7672b98eb65000090">
-<head>
-  <meta charset="utf-8">
-  <title>Plantrain</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/master.css">
-  <script>
-    if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
-  </script>
-  <link rel="shortcut icon" type="image/x-icon" href="https://y7v4p6k4.ssl.hwcdn.net/placeholder/favicon.ico">
-  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-</head>
-<body>
-  <script type="text/javascript" src="js/jQuery.js"></script>
-  <script type="text/javascript" src="js/webflow.js"></script>
-  <div class="logo"><img id="Jim" src="./images/gym.png"></img></div>
-  {{#if username}}
-    <div class="buttonDiv"><a class="button" href="lifts" id="liftButton">Lifts</a>
-    </div>
-    <div class="buttonDiv"><a class="button liftlistbutton" href="liftlists" id="listButton">LiftLists</a>
-    </div>
-    <div class="buttonDiv"><a class="button shufflebutton" href="placeholder.html" id="shuffleButton">Shuffle</a>
-    </div>
-    <div class="buttonDiv"><a class="button storbutton" href="liftlists.html" id="storeButton">Store</a>
-    </div>
-    <a href="user_logout">Logout</a>
-  <script src="js/hopscotch-0.1.2.js"></script>
-  <script src="js/homeTour.js"></script>
-  {{else}}
-    <script type="text/javascript">
-    window.location.href = "/";
+  <head>
+    <meta charset="utf-8">
+    <title>My History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <script>
+      if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
     </script>
-  {{/if}}
-  
-</body>
+    <script src="js/jQuery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://y7v4p6k4.ssl.hwcdn.net/placeholder/favicon.ico">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="w-nav" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" id="top"></div>
+    <script type="text/javascript" src="js/webflow.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+    <nav class="navbar navbar-default navbar-fixed-top" id="nav" role="navigation">
+      <div class="container-fluid" id="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="btn-toolbar toolbar-override" role="toolbar">
+          <div class="btn-group navbar-toggle group-override" id="backButton" onclick="history.back()"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-hand-left"></span></td></tr></table></div>
+          <div class="btn-group navbar-toggle group-override" id="pageName"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="title">My History</span></td></tr></table></div>
+          <div class="btn-group navbar-toggle group-override" id="searchButton" onclick="toggle();"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-search" id="searchSpan"></span></td></tr></table></div>
+          <div class="btn-group navbar-toggle group-override" id="menuButton" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-align-justify"></span></td></tr></table></div>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse popup2" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropLink"><a href="/">Home</a></li>
+            <li class="dropLink"><a href="lifts">Lifts</a></li>
+            <li class="dropLink"><a href="liftlists">LiftLists</a></li>
+            <li class="dropLink"><a href="store">Store</a></li>
+            <!--
+            <li class="dropLink"><a href="placeholder.html">Help</a></li>
+          -->
+            <li class="dropLink"><a href="user_logout">Logout</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+        <div class="searchBarDiv" id="searchBarDiv">
+          <div class="form-group">
+            <div class="pull-right searchBar">
+              <form class="navbar-form" role="search">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                  <div class="input-group-btn">
+                    <button class="btn btn-default button7" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div id="tableDiv" name="Lift">
+      <!--
+      <div class="panel-group accHeight" id="accordion">
+        <div class="panel panel-default accHeight">
+          <div class="panel-heading override">
+            <a class="invis" href="placeholder.html">
+              <table class="override">
+                <tr class="override">
+                  <td class="rowName override" id="row0">
+                    <div class="override itemName">Create a Lift</div>
+                  </td>
+                  <td class="plusButton"></td>
+                </tr>
+              </table>
+            </a>
+          </div>
+        </div>
+      </div>-->
+      <script type="text/javascript">
+        var count = 0;
+      </script>
+      <div class="panel-group" id="accordion">
+      {{#each hists}}
+      <div class="panel panel-default accHeight">
+        <div class="panel-heading override">
+          <script>
+            document.write("<table class=\"override\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + count + "\">");
+          </script>
+          <!--<table class="override" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= count %>">-->
+            <tr class="override">
+              <script>
+                document.write("<td class=\"rowName override\" id=\"row" + count + "\">");
+              </script>
+              <!--<td class="rowName override" id="row<%= count %>">-->
+                <div class="override itemName">
+                  {{liftName}}
+                </div>
+              </td>
+              <td class="dropDown">                  
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <script>
+        document.write("<div id=\"collapse" + count + "\" class=\"panel-collapse collapse\">");
+      </script>
+      <!--<div id="collapse<%= count %>" class="panel-collapse collapse">-->
+        <div class="panel-body">
+          <div class="expandedLift" id="{{name}}">
+            <div class="statsContainer">
+              <table class="liftStats">
+                <tr class="">
+                  <td class="half">
+                    <div class="date">
+                    <p>{{date}}</p>
+                  </div>
+                    <div class="inline">
+                    {{#each reps}}
+                      <p>{{this}} reps </p>
+                    {{/each}}
+                  </div>
+                  <div class="inline">
+                    {{#each weight}}
+                      <p>{{this}} lbs </p>
+                    {{/each}}
+                  </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        count += 1;
+      </script>
+      {{/each}}
+      </div>
+    </div>
+  </body>
 </html>

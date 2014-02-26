@@ -21,6 +21,7 @@ var UserSchema = new Mongoose.Schema({
 });
 
 var HistorySchema = new Mongoose.Schema({
+	"liftID": String,
 	"liftName": String,
 	"date": Date, 
 	"reps": [String], 
