@@ -108,21 +108,50 @@
         <div class="panel-body">
           <div class="expandedLift">
             <div class="statsContainer">
+              <table class="liftStats">
+                <tr class="storeRow">
+                  <td class="buttonCell" onclick="deleteSet()">
+                    <div class="title">
+                      Main Muscle:
+                    </div>
+                  </td>
+                  <td class="setInfo">
+                    <div class="set">
+                      {{mainMuscle}}
+                    </div>
+                  </td>
+                </tr>
+                <tr class="storeRow">
+                  <td class="buttonCell" onclick="deleteSet()">
+                    <div class="title">
+                      Exercise Type:
+                    </div>
+                  </td>
+                  <td class="setInfo">
+                    <div class="set">
+                      {{excerciseType}}
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
             <div class="buttonsContainer">
               <table class="liftButtons">
                 <tr class="innerLiftButton" onclick="addToList()">
-                  <td class="innerLiftButton">
+                  <td class="innerLiftButton doneButtonDiv">
                     <div class="innerLiftButton addButton" id="{{id}}">
                     </div>
+                    <div class="buttonUnder">Add</div>
                   </td>
                 </tr>
+                <!--
                 <tr class="innerLiftButton">
                   <td class="innerLiftButton">
                     <div class="innerLiftButton viewButton">
                     </div>
                   </td>
                 </tr>
+              -->
               </table>
             </div>
           </div>

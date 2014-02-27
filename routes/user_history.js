@@ -15,7 +15,7 @@ exports.view = function(req, res){
 					if(err) console.log(err);
 					if(toAdd[0]) {
 						hists.push(toAdd[0]);
-						hists.sort(function(a,b) { return ((a.liftName  == b.liftName) ? 0 : ((a.liftName>b.liftName) ? 1 : -1 )); } );
+						hists.sort(function(a,b) { return ((a.date  == b.date) ? 0 : ((a.date>b.date) ? -1 : 1 )); } );
 					}
 				}
 			}

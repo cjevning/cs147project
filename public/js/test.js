@@ -101,7 +101,7 @@ function deleteLiftFromList () {
 }
 
 function addToHistory () {
-  var liftID = $(event.target).closest('.doneButton').attr('id');
+  var liftID = $(event.target).closest('.doneButtonDiv').attr('id');
   var row = $(event.target).closest('.collapse');
   var find = $(event.target).closest('.expandedLift');
   var name = find.attr('id');

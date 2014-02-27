@@ -47,11 +47,12 @@
     <div id="tableDiv" name="Lift" >
       <div id="{{id}}" class="Cont">
         <div class="btnCont">
-          <button id="startLift" type="button" class="btn btn-default" onclick="forwardToLIP()">Start List</button>
+          <button id="startLift" type="button" class="btn btn-default btnCenter" onclick="forwardToLIP()">Start List</button>
         </div>
         <div class="btnCont">
-          <button id="startLift" type="button" class="btn btn-default" onclick="forwardToAdd()">Add Lifts</button>
+          <button id="startLift" type="button" class="btn btn-default btnCenter" onclick="forwardToAdd()">Add Lifts</button>
         </div>
+        <div class="btnCont">
         <script type="text/javascript">
           var last = '{{lastDone}}';
           var sp = last.split(" ");
@@ -62,6 +63,7 @@
           }
           document.write("<p>Last Done: " + x + "</p>");
         </script>
+        </div>
         <script type="text/javascript">
           var count = 0;
         </script>
@@ -99,9 +101,10 @@
                 <div class="buttonsContainer">
                   <table class="liftButtons">
                     <tr class="innerLiftButton">
-                      <td class="innerLiftButton">
+                      <td class="innerLiftButton doneButtonDiv">
                         <div class="innerLiftButton deleteButton" onclick="deleteLiftFromList()">
                         </div>
+                        <div class="buttonUnder">Delete</div>
                       </td>
                     </tr>
                   </table>

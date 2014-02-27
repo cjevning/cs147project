@@ -108,6 +108,7 @@
         <div class="panel-body">
           <div class="expandedLift" id="{{name}}">
             <div class="statsContainer">
+              <div class="instr"><p>Record your lift stats here:</p></div>
               <table class="liftStats">
                 <tr class="setRow set">
                   <td class="buttonCell" onclick="deleteSet()">
@@ -116,7 +117,7 @@
                   </td>
                   <td class="setInfo">
                     <div class="set">
-                      <input type="number" class="reps" name="quantity" min="1" max="999"> Reps <input type="number" class="weight" name="diff" min="0" max="999"> lbs.
+                      <input type="number" class="reps" name="quantity" min="1" max="999" value="10"> Reps <input type="number" class="weight" name="diff" min="0" max="999" value="100"> lbs.
                     </div>
                   </td>
                 </tr>
@@ -151,9 +152,10 @@
                 </tr>
               -->
                 <tr class="innerLiftButton">
-                  <td class="innerLiftButton">
-                    <div class="innerLiftButton doneButton" id="{{id}}" onclick="addToHistory()">
+                  <td class="innerLiftButton doneButtonDiv" id="{{id}}" onclick="addToHistory()">
+                    <div class="innerLiftButton doneButton">
                     </div>
+                    <div class="buttonUnder">Done</div>
                   </td>
                 </tr>
               </table>
@@ -181,7 +183,9 @@
         </div>
       </div>
     </div>
+    <!--
     <script src="js/hopscotch-0.1.2.js"></script>
     <script src="js/liftsTour.js"></script>
+  -->
   </body>
 </html>

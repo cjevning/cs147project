@@ -323,6 +323,7 @@ a:hover {
 
 .doneButton {
   width: 100%;
+  height: 7vh;
   background-image: url(../images/check.png);
   background-size: 90%;
   background-position: center;
@@ -381,3 +382,29 @@ a:hover {
   display: inline-block;
 }
 
+.buttonUnder {
+  font-size: 8pt;
+  text-align: center;
+}
+
+.instr {
+  margin-left: 10px;
+}
+
+.btnCont {
+  text-align: center;
+}
+
+  .button {
+    display: block;
+    width: 50%;
+    height: 10%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: ##ed730e;
+    font-family: Georgia, serif;
+    font-size: 150%;
+    font-weight: 700;
+  }
