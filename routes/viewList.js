@@ -16,7 +16,7 @@ exports.view = function(req, res){
         var lift = list[0].lifts;
         var name = list[0].name;
         var last = list[0].lastDone;
-        var lifts = [];
+        var lifts = new Array();
         console.log(lift);
         for (var i = 0; i < lift.length; i++) {
           var l = models.Lift.find({"_id": lift[i]}).exec(addToArray);

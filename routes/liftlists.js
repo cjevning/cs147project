@@ -42,9 +42,11 @@ exports.create = function(req, res) {
 			    "lastDone": new Date('Jan 24, 1992')
 			  });
 			  newList.save(afterSave);
+			  console.log("===============" + newList);
 			  function afterSave(err, resu) {
+			  	console.log("-------------" + resu[0]);
 			    if(err) console.log(err);
-			    var newest = models.LiftList.find({"name": name}).exec(red);
+			    var newest = models.LiftList.find({"_id": newList._id}).exec(red);
 
 			    function red(err, list) {
 				    if(err) console.log(err);
@@ -78,6 +80,7 @@ exports.addTo = function(req, res) {
 			var li = models.LiftList.find({'_id': list}).exec(afterQuery);
 			function afterQuery(err, u) {
 				if(err) console.log(err);
+
 			    u[0].lifts.push(lift);
 			    u[0].save(afterSave);
 			    function afterSave(err, projects) {
