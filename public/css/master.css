@@ -395,16 +395,33 @@ a:hover {
   text-align: center;
 }
 
-  .button {
-    display: block;
-    width: 50%;
-    height: 10%;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 2%;
-    border-radius: 10px;
-    background-color: ##ed730e;
-    font-family: Georgia, serif;
-    font-size: 150%;
-    font-weight: 700;
-  }
+.button {
+  display: block;
+  width: 50%;
+  height: 10%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 2%;
+  border-radius: 10px;
+  background-color: ##ed730e;
+  font-family: Georgia, serif;
+  font-size: 150%;
+  font-weight: 700;
+}
+
+#welcome {
+  border: solid;
+  border-width: 3px;
+  border-color: #ed730e;
+  margin-top: 10px;
+}
+
+.floatLeft {
+  width: 74%;
+  display: inline-block;
+}
+
+.floatRight {
+  width: 25%;
+  display: inline-block;
+}
