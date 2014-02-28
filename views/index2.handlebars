@@ -37,29 +37,17 @@
     {{#if errorMessage}}
       <p>{{errorMessage}}</p>
     {{/if}}
-    {{if showAlt}}
-
-    <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                  <div class="input-group-btn">
-                    <button class="btn btn-default button7" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-                  </div>
-                </div>
-    
-    <div id="welcome" href="create">
-      <p>Welcome to <b>Gymplify</b>! Please sign in above or click on this box to create an account</p>
-    </div>
-    {{else}}
     <form id="username-form" action="user_login" role="form">
       <div class="form-group">
-        <label for="title">Please Sign In</label>
-        <input type="text" class="form-control" name="username" placeholder="username">
+        <input type="text" class="form-control" name="username" placeholder="Username">
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
+    <div id="welcome" href="create">
+      <p>Welcome to <b>Gymplify</b>! Please sign in above or click on this box to create an account</p>
     <a href="create">Create Account</a>
-    {{/if}}
   {{/if}}
   
 </body>
 </html>
+
