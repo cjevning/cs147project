@@ -59,6 +59,7 @@ app.get('/user_login', user.login);
 app.get('/user_logout', user.logout);
 app.get('/user_create', user.create);
 app.get('/create', create.view);
+app.get('/create/b', create.viewAlt);
 app.get('/user_history', history.view);
 app.get('/store', store.view);
 app.post('/store/addLift/:id', store.addLift);
