@@ -27,11 +27,11 @@ exports.view = function(req, res){
 					alert(count);
 				}
 				
-			}
+			}/*
 			while (true) {
 				//console.log(count);
 				if (count == len-1) break;
-			}
+			}*/
 			lifts.sort(function(a,b) { return ((a.name  == b.name) ? 0 : ((a.name>b.name) ? 1 : -1 )); } );
 			res.render('lifts', { 'lifts': lifts });
 		}
