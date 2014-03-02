@@ -24,7 +24,7 @@ exports.view = function(req, res){
 					else {
 						count += 1;
 					}
-					console.log(count);
+					alert(count);
 				}
 				
 			}
