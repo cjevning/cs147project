@@ -1,5 +1,4 @@
 var models = require('../models');
-var count;
 
 exports.view = function(req, res){
 	var username = req.session.username;
