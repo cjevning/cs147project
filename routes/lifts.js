@@ -1,9 +1,10 @@
 var models = require('../models');
+var count;
 
 exports.view = function(req, res){
 	var username = req.session.username;
 	var user = models.User.find({"username": username}).exec(afterQuery);
-	var count = 0;
+	count = 0;
 	function afterQuery(err, results) {
 		if(err) console.log(err);
 		if(results[0]) {
