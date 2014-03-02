@@ -15,7 +15,6 @@ exports.view = function(req, res){
 			for (var i = 0; i < len; i++) {
 				var l = models.Lift.find({"_id": lift[i]}).exec(addToArray);
 				function addToArray(err, toAdd) {
-					console.log(called);
 					if(err) console.log(err);
 					if(toAdd[0]) {
 						lifts.push(toAdd[0]);
