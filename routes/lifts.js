@@ -3,7 +3,7 @@ var models = require('../models');
 exports.view = function(req, res){
 	var username = req.session.username;
 	var user = models.User.find({"username": username}).exec(afterQuery);
-	var count = 0;
+	count = 0;
 	function afterQuery(err, results) {
 		if(err) console.log(err);
 		if(results[0]) {
@@ -23,16 +23,24 @@ exports.view = function(req, res){
 					else {
 						count += 1;
 					}
-					alert(count);
+					showPage(count);
+					function showPage(c) {
+						if (c == len) {
+							console.log(c);
+							lifts.sort(function(a,b) { return ((a.name  == b.name) ? 0 : ((a.name>b.name) ? 1 : -1 )); } );
+							res.render('lifts', { 'lifts': lifts });
+						}
+					}
 				}
-				
-			}/*
+			}
+			/*
 			while (true) {
-				//console.log(count);
+				console.log(count);
 				if (count == len-1) break;
-			}*/
+			}
 			lifts.sort(function(a,b) { return ((a.name  == b.name) ? 0 : ((a.name>b.name) ? 1 : -1 )); } );
 			res.render('lifts', { 'lifts': lifts });
+			*/
 		}
 		else {
 			req.session.errorMessage = "You must be signed in to do that!";
