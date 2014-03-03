@@ -11,7 +11,7 @@ exports.view = function(req, res){
 			var lifts = [];
 			
 			var len = lift.length;
-			console.log(len);
+			console.log("len = " + len);
 			for (var i = 0; i < len; i++) {
 				var l = models.Lift.find({"_id": lift[i]}).exec(addToArray);
 				function addToArray(err, toAdd) {
@@ -25,6 +25,7 @@ exports.view = function(req, res){
 					}
 					showPage(count);
 					function showPage(c) {
+						console.log ("c = " + c);
 						if (c == len) {
 							console.log(c);
 							lifts.sort(function(a,b) { return ((a.name  == b.name) ? 0 : ((a.name>b.name) ? 1 : -1 )); } );
