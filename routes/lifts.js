@@ -11,25 +11,20 @@ exports.view = function(req, res){
 			var lifts = [];
 			
 			var len = lift.length;
-			console.log("len = " + len);
-			for (var i = 0; i < len; i++) {
-				var l = models.Lift.find({"_id": lift[i]}).exec(addToArray);
-				function addToArray(err, toAdd) {
-					if(err) console.log(err);
-					if(toAdd[0]) {
-						lifts.push(toAdd[0]);
+			if (len == 0) res.render('lifts', { 'lifts': lifts });
+			else {
+				for (var i = 0; i < len; i++) {
+					var l = models.Lift.find({"_id": lift[i]}).exec(addToArray);
+					function addToArray(err, toAdd) {
+						if(err) console.log(err);
+						if(toAdd[0]) lifts.push(toAdd[0]);
 						count += 1;
-					}
-					else {
-						count += 1;
-					}
-					showPage(count);
-					function showPage(c) {
-						console.log ("c = " + c);
-						if (c == len) {
-							console.log(c);
-							lifts.sort(function(a,b) { return ((a.name  == b.name) ? 0 : ((a.name>b.name) ? 1 : -1 )); } );
-							res.render('lifts', { 'lifts': lifts });
+						showPage(count);
+						function showPage(c) {
+							if (c == len) {
+								lifts.sort(function(a,b) { return ((a.name  == b.name) ? 0 : ((a.name>b.name) ? 1 : -1 )); } );
+								res.render('lifts', { 'lifts': lifts });
+							}
 						}
 					}
 				}
