@@ -3,23 +3,30 @@ var models = require('../models');
 exports.view = function(req, res){
 	var username = req.session.username;
 	var user = models.User.find({"username": username}).exec(afterQuery);
-
+	count = 0;
 	function afterQuery(err, results) {
 		if(err) console.log(err);
 		if(results[0]) {
 			var list = results[0].liftlists;
 			var lists = [];
-			for (var i = 0; i < list.length; i++) {
+			var len = list.length;
+			if (len == 0) res.render('liftlists', { 'lists': lists });
+			for (var i = 0; i < len; i++) {
 				var l = models.LiftList.find({"_id": list[i]}).exec(addToArray);
 				function addToArray(err, toAdd) {
 					if(err) console.log(err);
-					if(toAdd[0]) {
-						lists.push(toAdd[0]);
-						lists.sort(function(a,b) { return ((a.name  == b.name) ? 0 : ((a.name>b.name) ? 1 : -1 )); } );
+					if(toAdd[0]) lists.push(toAdd[0]);
+					count += 1;
+					showPage(count);
+					function showPage(c) {
+						if (c == len) {
+							lists.sort(function(a,b) { return ((a.name  == b.name) ? 0 : ((a.name>b.name) ? 1 : -1 )); } );
+							res.render('liftlists', { 'lists': lists });
+						}
 					}
 				}
 			}
-			res.render('liftlists', { 'lists': lists });
+			
 		}
 		else {
 			req.session.errorMessage = "You must be signed in to do that!";

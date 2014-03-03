@@ -3,23 +3,29 @@ var models = require('../models');
 exports.view = function(req, res){
 	var username = req.session.username;
 	var user = models.User.find({"username": username}).exec(afterQuery);
-
+	count = 0;
 	function afterQuery(err, results) {
 		if(err) console.log(err);
 		if(results[0]) {
 			var hist = results[0].history;
 			var hists = [];
-			for (var i = 0; i < hist.length; i++) {
+			var len = hist.length;
+			if (len == 0) res.render('user_history', { 'hists': hists });
+			for (var i = 0; i < len; i++) {
 				var l = models.HistoryLift.find({"_id": hist[i]}).exec(addToArray);
 				function addToArray(err, toAdd) {
 					if(err) console.log(err);
-					if(toAdd[0]) {
-						hists.push(toAdd[0]);
-						hists.sort(function(a,b) { return ((a.date  == b.date) ? 0 : ((a.date>b.date) ? -1 : 1 )); } );
-					}
+					if(toAdd[0]) hists.push(toAdd[0]);
+					count += 1;
+                    showPage(count);
+                    function showPage(c) {
+                    	if (c == len) {
+                    		hists.sort(function(a,b) { return ((a.date  == b.date) ? 0 : ((a.date>b.date) ? -1 : 1 )); } );
+							res.render('user_history', { 'hists': hists });
+                    	}
+                  	}
 				}
 			}
-			res.render('user_history', { 'hists': hists });
 		}
 		else {
 			req.session.errorMessage = "You must be signed in to do that!";

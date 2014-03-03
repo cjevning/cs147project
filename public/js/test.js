@@ -66,7 +66,8 @@ function addLift() {
 
 function createList() {
     var title = $('#new-list-form #title').val();
-    window.location.replace('/liftlists/create/' + title);
+    if (title == "") alert("You must name your liftlist!");
+    else window.location.replace('/liftlists/create/' + title);
 }
 
 function addToList () {
