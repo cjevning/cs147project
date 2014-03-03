@@ -224,6 +224,7 @@
 
 .form-control {
   height: 9vh;
+  width: 94vw;
 }
 
 .nonexist {
@@ -424,4 +425,51 @@ a:hover {
 .floatRight {
   width: 25%;
   display: inline-block;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.login {
+  position: relative;
+  float: right;
+}
+
+.input {
+  position: absolute;
+  height: 10vh;
+  border-radius: 10px;
+}
+
+#formDiv {
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+
+#signupCont {
+  height: 10vh;
+  text-align: center;
+  padding-bottom: 2vh;
+}
+
+#orDiv {
+  padding-top: 2vh;
+  padding-bottom: 1vh;
+  text-align: center;
+}
+
+.buttonH {
+  height: 10vh;
+  width: 30vw;
+  background-image: none;
+  background-color: #ed730e;
+  padding: 2%;
+  border-radius: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: Georgia, serif;
+  font-size: 150%;
+  font-weight: normal;
+  color: white;
 }
