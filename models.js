@@ -4,7 +4,13 @@ var Mongoose = require('mongoose');
 var LiftSchema = new Mongoose.Schema({
 	"name": String,
 	"mainMuscle": String, 
-	"excerciseType": String, 
+	"excerciseType": String,
+	"pictureOne": String, 
+	"pictureTwo": String,
+});
+
+var LiftName = new Mongoose.Schema({
+	"name": String,
 });
 
 var LiftListSchema = new Mongoose.Schema({
@@ -29,6 +35,7 @@ var HistorySchema = new Mongoose.Schema({
 });
 
 exports.Lift = Mongoose.model('Lift', LiftSchema);
+exports.Lift = Mongoose.model('LiftName', LiftSchema);
 exports.LiftList = Mongoose.model('LiftList', LiftListSchema);
 exports.User = Mongoose.model('User', UserSchema);
 exports.HistoryLift = Mongoose.model('HistoryLift', HistorySchema);

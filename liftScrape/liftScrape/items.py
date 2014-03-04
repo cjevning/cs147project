@@ -9,3 +9,5 @@ class liftItem(Item):
   	name = Field()
 	mainMuscle = Field()
 	excerciseType = Field()
+	pictureOne = Field()
+	pictureTwo = Field()
