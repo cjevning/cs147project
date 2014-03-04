@@ -131,3 +131,6 @@ function addToHistory () {
     $.post(url_call);
   }
 }
+
+
+
