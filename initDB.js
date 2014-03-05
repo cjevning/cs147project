@@ -59,7 +59,6 @@ function onceClear2(err) {
 
     lift.save(function(err, proj) {
       if(err) console.log(err);
-
       to_save_count--;
       console.log(to_save_count + ' left to save');
       lift2.save(function(err2, proj2) {
@@ -73,8 +72,9 @@ function onceClear2(err) {
           mongoose.connection.close()
         }
       });
-    }
-   }
+    });
+  }
+  
     
   
 }
