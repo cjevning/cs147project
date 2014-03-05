@@ -32,8 +32,8 @@ exports.view = function(req, res){
 			var transport = nodemailer.createTransport("SMTP", {
 			    service: "Gmail",
 			    auth: {
-			        user: "cs147timer@hotmail.com",
-			        pass: "Mongoose"
+			        user: "cjevning@gmail.com",
+			        pass: "hz9k1234"
 			    } });
 			transport.sendMail(mailOptions, function(error, response){
 			    if(error){
@@ -78,8 +78,8 @@ exports.viewAlt = function(req, res){
 			var transport = nodemailer.createTransport("SMTP", {
 			    service: "Gmail",
 			    auth: {
-			        user: "cs147timer@hotmail.com",
-			        pass: "Mongoose"
+			        user: "cjevning@gmail.com",
+			        pass: "hz9k1234"
 			    } });
 			transport.sendMail(mailOptions, function(error, response){
 			    if(error){
