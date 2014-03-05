@@ -84,6 +84,8 @@ class LiftSpider(Spider):
 
             attributes = sel.xpath('//div[@id= "exerciseDetails"]/*/*/text()');  
             i = 0
+            pictures = sel.xpath('//div[@class = "exercisePhotos"]//img/@src')
+
             # for attr in attributes:
             #     print "\nattr[" + i + "] = "
             #     print attr
@@ -91,9 +93,10 @@ class LiftSpider(Spider):
             #     i+=1
             
             item['name'] = str(titles.extract()[0].strip())
-            item['excerciseType'] = str(attributes.extract()[0].strip()) 
-            item['mainMuscle'] = str(attributes.extract()[1].strip()) #str(attributes)#str(response)[2]
-           
+            # item['excerciseType'] = str(attributes.extract()[0].strip()) 
+            # item['mainMuscle'] = str(attributes.extract()[1].strip()) #str(attributes)#str(response)[2]
+            # item['pictureOne'] = str(pictures.extract()[0].strip())
+            # item['pictureTwo'] = str(pictures.extract()[2].strip())
             
             # print item['name'];
             yield item
