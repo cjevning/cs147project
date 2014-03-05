@@ -9,6 +9,7 @@ exports.view = function(req, res){
 		if (!req.session.startTime) {
 			req.session.startTime = new Date().getTime();
 			req.session.timeSpent = null;
+			req.session.page = "original";
 		}
 	}
 	else {
@@ -17,7 +18,6 @@ exports.view = function(req, res){
 			var spent = now - req.session.startTime;
 			req.session.startTime = null;
 			req.session.timeSpent = spent;
-			if (!req.session.page) req.session.page = "original";
 			var type = " sign IN ";
 			if (req.session.signup) {
 				req.session.signup = false;
@@ -55,6 +55,7 @@ exports.viewAlt = function(req, res){
 		if (!req.session.startTime) {
 			req.session.startTime = new Date().getTime();
 			req.session.timeSpent = null;
+			req.session.page = "alternate";
 		}
 	}
 	else {
@@ -63,7 +64,6 @@ exports.viewAlt = function(req, res){
 			var spent = now - req.session.startTime;
 			req.session.startTime = null;
 			req.session.timeSpent = spent;
-			if (!req.session.page) req.session.page = "alternate";
 			var type = " sign IN ";
 			if (req.session.signup) {
 				req.session.signup = false;
