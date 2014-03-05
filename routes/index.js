@@ -25,7 +25,7 @@ exports.view = function(req, res){
 			}
 			var mailOptions = {
 			    from: "test@test.com",
-			    to: "cjevning@stanford.edu",
+			    to: "cjevning@stanford.edu, juliag1@stanford.edu, buhler@stanford.edu",
 			    subject: "Hello world!",
 			    text: "User " + req.session.username + " took " + spent + " milliseconds to"+type+"on the " + req.session.page + " page."
 			}
@@ -71,7 +71,7 @@ exports.viewAlt = function(req, res){
 			}
 			var mailOptions = {
 			    from: "test@test.com",
-			    to: "cjevning@stanford.edu",
+			    to: "cjevning@stanford.edu, juliag1@stanford.edu, buhler@stanford.edu",
 			    subject: "Hello world!",
 			    text: "User " + req.session.username + " took " + spent + " milliseconds to" + type + "on the " + req.session.page + " page."
 			}
