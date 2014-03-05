@@ -17,6 +17,7 @@ exports.view = function(req, res){
 			var spent = now - req.session.startTime;
 			req.session.startTime = null;
 			req.session.timeSpent = spent;
+			if (!req.session.page) req.session.page = "original";
 			var type = " sign IN ";
 			if (req.session.signup) {
 				req.session.signup = false;
@@ -26,7 +27,7 @@ exports.view = function(req, res){
 			    from: "test@test.com",
 			    to: "cjevning@stanford.edu, juliag1@stanford.edu, buhler@stanford.edu",
 			    subject: "Hello world!",
-			    text: "User " + req.session.username + " took " + spent + " milliseconds to"+type+"on the original page."
+			    text: "User " + req.session.username + " took " + spent + " milliseconds to"+type+"on the " + req.session.page + " page."
 			}
 			var transport = nodemailer.createTransport("SMTP", {
 			    service: "Gmail",
@@ -62,6 +63,7 @@ exports.viewAlt = function(req, res){
 			var spent = now - req.session.startTime;
 			req.session.startTime = null;
 			req.session.timeSpent = spent;
+			if (!req.session.page) req.session.page = "alternate";
 			var type = " sign IN ";
 			if (req.session.signup) {
 				req.session.signup = false;
@@ -71,7 +73,7 @@ exports.viewAlt = function(req, res){
 			    from: "test@test.com",
 			    to: "cjevning@stanford.edu, juliag1@stanford.edu, buhler@stanford.edu",
 			    subject: "Hello world!",
-			    text: "User " + req.session.username + " took " + spent + " milliseconds to" + type + "on the alternate page."
+			    text: "User " + req.session.username + " took " + spent + " milliseconds to" + type + "on the " + req.session.page + " page."
 			}
 			var transport = nodemailer.createTransport("SMTP", {
 			    service: "Gmail",
