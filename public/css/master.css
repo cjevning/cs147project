@@ -459,6 +459,13 @@ a:hover {
   text-align: center;
 }
 
+#orDiv2 {
+  margin-top: 10vh;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
+  text-align: center;
+}
+
 .buttonH {
   height: 10vh;
   width: 30vw;
