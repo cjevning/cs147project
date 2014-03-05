@@ -55,9 +55,6 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
   <!--<script src="js/homeTour.js"></script>-->
   {{else}}
     {{#if showAlt}}
-    <script type="text/javascript">
-      ga('send', '_trackTiming', 'Alt', 'login_time', {{timeSpent}});
-    </script>
     {{#if errorMessage}}
       <script type="text/javascript">alert("That username doesn't exist! You can create an account by clicking on the \"Sign Up\" button.");</script>
     {{/if}}

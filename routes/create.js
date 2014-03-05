@@ -1,4 +1,5 @@
 exports.view = function(req, res){
+	req.session.signup = true;
   res.render('create', {
   	errorMessage: req.session.errorMessage,
   	showAlt: false
@@ -6,6 +7,7 @@ exports.view = function(req, res){
 };
 
 exports.viewAlt = function(req, res){
+	req.session.signup = true;
   res.render('create', {
 	errorMessage: req.session.errorMessage,
 	showAlt: true
