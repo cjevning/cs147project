@@ -98,9 +98,6 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     {{#if errorMessage}}
       <p>{{errorMessage}}</p>
     {{/if}}
-    <script type="text/javascript">
-      ga('send', '_trackTiming', 'Orig', 'login_time', {{timeSpent}});
-    </script>
     <form id="username-form" action="user_login" role="form">
       <div class="form-group">
         <label for="title">Please Sign In</label>
