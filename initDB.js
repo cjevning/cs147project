@@ -73,7 +73,8 @@ function onceClear2(err) {
           mongoose.connection.close()
         }
       });
-     
+    }
+   }
     
   
 }
