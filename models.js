@@ -35,7 +35,7 @@ var HistorySchema = new Mongoose.Schema({
 });
 
 exports.Lift = Mongoose.model('Lift', LiftSchema);
-exports.Lift = Mongoose.model('LiftName', LiftSchema);
+exports.LiftName = Mongoose.model('LiftName', LiftName);
 exports.LiftList = Mongoose.model('LiftList', LiftListSchema);
 exports.User = Mongoose.model('User', UserSchema);
 exports.HistoryLift = Mongoose.model('HistoryLift', HistorySchema);

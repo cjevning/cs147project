@@ -1,6 +1,7 @@
 var models = require('../models');
 
 exports.view = function(req, res){
+	req.session.username = "c";
 	var username = req.session.username;
 	var user = models.User.find({"username": username}).exec(afterQuery);
 	count = 0;
@@ -14,7 +15,7 @@ exports.view = function(req, res){
 			if (len == 0) res.render('lifts', { 'lifts': lifts });
 			else {
 				for (var i = 0; i < len; i++) {
-					var l = models.Lift.find({"_id": lift[i]}).exec(addToArray);
+					var l = models.LiftName.find({"_id": lift[i]}).exec(addToArray);
 					function addToArray(err, toAdd) {
 						if(err) console.log(err);
 						if(toAdd[0]) lifts.push(toAdd[0]);

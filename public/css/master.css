@@ -209,6 +209,12 @@
   width: 100%;
 }
 
+#tableDiv2 {
+  position: relative;
+  top: 18%;
+  width: 100%;
+}
+
 #nav {
   height: 9%;
   margin: 0px;
@@ -479,4 +485,22 @@ a:hover {
   font-size: 150%;
   font-weight: normal;
   color: white;
+}
+
+.lockTop {
+  position: fixed;
+  top: 9vh;
+  width: 100%;
+  z-index: 500;
+  height: auto;
+}
+
+.lockSecond {
+
+  width: 100%;
+}
+
+.notify {
+  text-align: center;
+  font-weight: bold;
 }

@@ -12,7 +12,7 @@ exports.view = function(req, res){
 			var len = lift.length;
 			if (len == 0) res.render('addLifts', { 'lifts': lifts });
 			for (var i = 0; i < len; i++) {
-				var l = models.Lift.find({"_id": lift[i]}).exec(addToArray);
+				var l = models.LiftName.find({"_id": lift[i]}).exec(addToArray);
 			}
 			function addToArray(err, toAdd) {
 				if(err) console.log(err);

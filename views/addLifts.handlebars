@@ -24,8 +24,12 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="btn-toolbar toolbar-override" role="toolbar">
           <div class="btn-group navbar-toggle group-override" id="backButton" onclick="history.back()"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-hand-left"></span></td></tr></table></div>
-          <div class="btn-group navbar-toggle group-override" id="pageName"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="title">Add Lifts</span></td></tr></table></div>
-          <div class="btn-group navbar-toggle group-override" id="searchButton" onclick="toggle();"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-search" id="searchSpan"></span></td></tr></table></div>
+          <!--
+          <div class="btn-group navbar-toggle group-override" id="pageName"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="title">{{name}}</span></td></tr></table></div>
+          <div class="btn-group navbar-toggle group-override" id="searchButton" onclick="toggle();"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-search" id="searchSpan"></span></td></tr></table></div>-->
+          <div class="btn-group navbar-toggle group-override" id="nonSearch"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="title">Add Lifts</span></td></tr></table></div>
+
+          
           <div class="btn-group navbar-toggle group-override" id="menuButton" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><table class="nonexist"><tr class="nonexist"><td class="nonexist"><span class="glyphicon glyphicon-align-justify"></span></td></tr></table></div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -33,7 +37,7 @@
           <ul class="nav navbar-nav">
             <li class="dropLink"><a href="../">Home</a></li>
             <li class="dropLink"><a href="../lifts">Lifts</a></li>
-            <li class="dropLink"><a href="../liftlists">LiftLists</a></li>
+            <li class="dropLink"><a href="../liftlists">Workouts</a></li>
             <li class="dropLink"><a href="../store">Store</a></li>
             <li class="dropLink"><a href="../user_history">My History</a></li>
             <!--
@@ -59,26 +63,26 @@
         </div>
       </div><!-- /.container-fluid -->
     </nav>
-
-    <div id="tableDiv" name="Lift">
-        <div class="panel panel-default accHeight">
-          <div class="panel-heading override">
-            <a class="invis" href="../liftlists">
-              <table class="override">
-                <tr class="override">
-                  <td class="rowName override" id="rowLast">
-                    <div class="override itemName">Done Adding Lifts</div>
-                  </td>
-                  <td class="doneButton"></td>
-                </tr>
-              </table>
-            </a>
-          </div>
+    <div class="panel panel-default accHeight lockTop">
+        <div class="panel-heading override">
+          <a class="invis" href="../liftlists">
+            <table class="override">
+              <tr class="override">
+                <td class="rowName override" id="rowLast">
+                  <div class="override itemName">Done Adding Lifts</div>
+                </td>
+                <td class="deleteButton"></td>
+              </tr>
+            </table>
+          </a>
         </div>
+      </div>
+    <div id="tableDiv2" name="Lift">
+      
       <script type="text/javascript">
         var count = 0;
       </script>
-      <div class="panel-group" id="accordion">
+      <div class="panel-group lockSecond" id="accordion">
       {{#each lifts}}
       <div class="panel panel-default accHeight">
         <div class="panel-heading override">
@@ -110,6 +114,7 @@
             <div class="statsContainer">
               <table class="liftStats">
                 <tr class="storeRow">
+                  <!--
                   <td class="buttonCell" onclick="deleteSet()">
                     <div class="title">
                       Main Muscle:
@@ -132,6 +137,7 @@
                       {{excerciseType}}
                     </div>
                   </td>
+                -->
                 </tr>
               </table>
             </div>

@@ -7,9 +7,10 @@ exports.view = function(req, res){
   function afterQuery(err, results) {
     if(err) console.log(err);
     if(results[0]) {
-      var l = models.Lift.find().sort('name').exec(addToArray);
+      var l = models.LiftName.find().sort('name').exec(addToArray);
       var lifts = new Array();
       function addToArray(err, toAdd) {
+        console.log(toAdd[0]);
         if(err) console.log(err);
         res.render('store', { 'lifts': toAdd });
       }

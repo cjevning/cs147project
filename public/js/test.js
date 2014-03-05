@@ -59,9 +59,17 @@ function addSet() {
 function addLift() {
   var liftID = $(event.target).closest('.addButton').attr('id');
   var row = $(event.target).closest('.collapse');
-  row.removeClass("in");
   var url_call = '/store/addLift/'+liftID;
   $.post(url_call);
+  var cont = $(event.target).closest('.expandedLift');
+  var inner = cont.html();
+  cont.html("<p class=\"notify\">Lift added to your Lifts!</p>");
+  window.setTimeout(partB,1000);
+
+  function partB() {
+    row.removeClass("in");
+    cont.html(inner);
+  }
 }
 
 function createList() {
@@ -76,9 +84,17 @@ function addToList () {
   var listID = sp[sp.length-1];
   var liftID = $(event.target).closest('.addButton').attr('id');
   var row = $(event.target).closest('.collapse');
-  row.removeClass("in");
   var url_call = '/liftlists/addTo/'+listID+'/'+liftID;
   $.post(url_call);
+  var cont = $(event.target).closest('.expandedLift');
+  var inner = cont.html();
+  cont.html("<p class=\"notify\">Lift added to workout!</p>");
+  window.setTimeout(partB,1000);
+
+  function partB() {
+    row.removeClass("in");
+    cont.html(inner);
+  }
 }
 
 function forwardToLIP () {
@@ -127,8 +143,16 @@ function addToHistory () {
     reps = reps.substring(1);
     weight = weight.substring(1);
     url_call += reps + "/" + weight
-    row.removeClass("in");
     $.post(url_call);
+    var cont = $(event.target).closest('.expandedLift');
+    var inner = cont.html();
+    cont.html("<p class=\"notify\">Lift added to history!</p>");
+    window.setTimeout(partB,1000);
+
+    function partB() {
+      row.removeClass("in");
+      cont.html(inner);
+    }
   }
 }
 

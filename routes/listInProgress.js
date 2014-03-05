@@ -25,7 +25,7 @@ exports.doList = function(req, res){
             var len = lift.length;
             if (len == 0) res.render('listInProgress', { 'lifts': lifts, 'name': name, "id": id, "lastDone": last});
             for (var i = 0; i < len; i++) {
-              var l = models.Lift.find({"_id": lift[i]}).exec(addToArray);
+              var l = models.LiftName.find({"_id": lift[i]}).exec(addToArray);
               function addToArray(err, toAdd) {
                 if(err) console.log(err);
                 if(toAdd[0]) lifts.push(toAdd[0]);
