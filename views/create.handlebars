@@ -27,10 +27,11 @@
     <div class="buttonDiv"><a class="button storbutton" href="liftlists.html" id="storeButton">Store</a>
     </div>
   {{else}}
-  	{{#if errorMessage}}
-  		<script type="text/javascript">alert("That username is already in use! If it's yours, click the button below to go back and sign in.");</script>
-  	{{/if}}
+  	
     {{#if showAlt}}
+    {{#if errorMessage}}
+      <script type="text/javascript">alert("That username is already in use! If it's yours, click the button below to go back and sign in.");</script>
+    {{/if}}
     <div id="formDiv">
     <form id="username-form" action="../user_create" role="form">
       <div class="form-group">
@@ -53,6 +54,9 @@
     </div>
     
   {{else}}
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
     <form id="username-form" action="../user_create" role="form">
 	  <div class="form-group">
 	    <label for="title">Select a username</label>

@@ -5,11 +5,13 @@
 var nodemailer = require("nodemailer");
 
 exports.view = function(req, res){
+	console.log("=============================================================ORIGINAL+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 	if (!req.session.username) {
+		req.session.page = "original";
 		if (!req.session.startTime) {
 			req.session.startTime = new Date().getTime();
 			req.session.timeSpent = null;
-			req.session.page = "original";
+			
 		}
 	}
 	else {
@@ -23,6 +25,7 @@ exports.view = function(req, res){
 				req.session.signup = false;
 				type = " sign UP ";
 			}
+			console.log(req.session.page);
 			var mailOptions = {
 			    from: "test@test.com",
 			    to: "cjevning@stanford.edu, juliag1@stanford.edu, buhler@stanford.edu",
@@ -35,12 +38,7 @@ exports.view = function(req, res){
 			        user: "cjevning@gmail.com",
 			        pass: "hz9k1234"
 			    } });
-			transport.sendMail(mailOptions, function(error, response){
-			    if(error){
-			        console.log(error);
-			    }else{
-			        console.log("Message sent: " + response.message);
-			    }});
+			
 		}
 	}
   res.render('index', {
@@ -51,11 +49,13 @@ exports.view = function(req, res){
 };
 
 exports.viewAlt = function(req, res){
+	console.log("=============================================================ALTERNATE+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 	if (!req.session.username) {
+		req.session.page = "alternate";
 		if (!req.session.startTime) {
 			req.session.startTime = new Date().getTime();
 			req.session.timeSpent = null;
-			req.session.page = "alternate";
+			
 		}
 	}
 	else {
@@ -69,6 +69,7 @@ exports.viewAlt = function(req, res){
 				req.session.signup = false;
 				type = " sign UP ";
 			}
+			console.log(req.session.page);
 			var mailOptions = {
 			    from: "test@test.com",
 			    to: "cjevning@stanford.edu, juliag1@stanford.edu, buhler@stanford.edu",
@@ -81,12 +82,7 @@ exports.viewAlt = function(req, res){
 			        user: "cjevning@gmail.com",
 			        pass: "hz9k1234"
 			    } });
-			transport.sendMail(mailOptions, function(error, response){
-			    if(error){
-			        console.log(error);
-			    }else{
-			        console.log("Message sent: " + response.message);
-			    }});
+			
 		}
 	}
   res.render('index', {
