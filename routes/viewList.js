@@ -11,7 +11,6 @@ exports.view = function(req, res){
       var l = models.LiftList.find({"_id": id}).exec(getList);
       function getList(err, list) {
         if(err) console.log(err);
-        console.log(list[0]);
         var lift = list[0].lifts;
         var name = list[0].name;
         var last = list[0].lastDone;

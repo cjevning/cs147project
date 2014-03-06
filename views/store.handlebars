@@ -62,76 +62,24 @@
       </div><!-- /.container-fluid -->
     </nav>
     <div id="tableDiv" name="Lift">
-      <!--
-      <div class="panel-group accHeight" id="accordion">
-        <div class="panel panel-default accHeight">
-          <div class="panel-heading override">
-            <a class="invis" href="placeholder.html">
-              <table class="override">
-                <tr class="override">
-                  <td class="rowName override" id="row0">
-                    <div class="override itemName">Create a Lift</div>
-                  </td>
-                  <td class="plusButton"></td>
-                </tr>
-              </table>
-            </a>
-          </div>
-        </div>
-      </div>-->
       {{#each lifts}}
       <div class="panel panel-default accHeight">
         <div class="panel-heading override">
-          <table class="override" data-toggle="collapse" data-parent="#accordion" href="#collapse{{id}}">
-            <tr class="override">
-              <td class="rowName override" id="row{{id}}">
-                <div class="override itemName">
+          <div class="override itemName" data-toggle="collapse" data-parent="#accordion" href="#collapse{{id}}">
                   {{name}}
-                </div>
-              </td>
-              <td class="dropDown">                  
-              </td>
-            </tr>
-          </table>
+              <div class="dropDown">                  
+              </div>
         </div>
       </div>
       <div id="collapse{{id}}" class="panel-collapse collapse">
-        <div class="panel-body">
-          <div class="expandedLift">
-            <div class="statsContainer">
-              <table class="liftStats">
-                <tr class="storeRow">
-                  <!--
-                  <td class="buttonCell" onclick="deleteSet()">
-                    <div class="title">
-                      Main Muscle:
-                    </div>
-                  </td>
-                  <td class="setInfo">
-                    <div class="set">
-                      {{mainMuscle}}
-                    </div>
-                  </td>
-                </tr>
-                <tr class="storeRow">
-                  <td class="buttonCell" onclick="deleteSet()">
-                    <div class="title">
-                      Exercise Type:
-                    </div>
-                  </td>
-                  <td class="setInfo">
-                    <div class="set">
-                      {{excerciseType}}
-                    </div>
-                  </td>
-                -->
-                </tr>
-              </table>
-            </div>
-            <div class="buttonsContainer">
+        <div class="panel-body expandedLift statsContainer liftStats storeRow" onclick="viewLiftStore()" id="{{name}}">
+          <p class="storeInfo">More Info... </p>
+        </div>
+          <div class="buttonsContainer">
               <table class="liftButtons">
                 <tr class="innerLiftButton">
                   <td class="innerLiftButton">
+
                     <div class="innerLiftButton addButton" onclick="addLift()" id="{{id}}">
                     </div>
                     <div class="buttonUnder">Add</div>

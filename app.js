@@ -19,6 +19,7 @@ var store = require('./routes/store');
 var add = require('./routes/addLifts');
 var list = require('./routes/listInProgress');
 var viewList = require('./routes/viewList');
+var viewLift = require('./routes/viewLift');
 // Example route
 // var user = require('./routes/user');
 
@@ -70,6 +71,8 @@ app.post('/liftlists/deleteFrom/:listID/:liftID', liftlists.deleteFrom);
 app.get('/listInProgress/:id', list.doList);
 app.get('/viewList/:id', viewList.view);
 app.post('/user_history/:id/:name/:reps/:weight', history.addTo);
+app.get('/viewLift/store/:name', viewLift.storeView);
+app.get('/viewLift/non/:name', viewLift.view);
 // Example route
 // app.get('/users', user.list);
 

@@ -73,10 +73,18 @@ function addLift() {
 }
 
 function viewLift() {
-  var liftName = $(event.target).closest('viewButton').attr('id');
-  var url_call = '/viewLift/' + liftName;
+  var liftName = $(event.target).closest('.viewButton').attr('id');
+  var url_call = '/viewLift/non/' + liftName;
   window.location.replace(url_call);
 }
+
+function viewLiftStore() {
+  var liftName = $(event.target).closest('.storeRow').attr('id');
+  var url_call = '/viewLift/store/' + liftName;
+  window.location.replace(url_call);
+}
+
+
 
 function createList() {
     var title = $('#new-list-form #title').val();
@@ -162,5 +170,40 @@ function addToHistory () {
   }
 }
 
+function addToHistory2 () {
+  var row = $(event.target).closest('.collapse');
+  var find = $(event.target).closest('.expandedLift');
+  var name = find.attr('id');
+  var children = find.find('.reps');
+  var children2 = find.find('.weight');
+  var reps = "";
+  var weight = "";
+  var good = true;
+  for (var i = 0; i < children.length; i++) {
+    var addRep = children.eq(i).val();
+    var addWeight = children2.eq(i).val();
+    if (addRep == "" || addWeight == "") {
+      good = false;
+      alert("You must have all fields filled in!");
+      break;
+    }
+    reps += "_" + addRep;
+    weight += "_" + addWeight;
+  }
+  if (good) {
+    var url_call = '/user_history/get/'+name+'/';
+    reps = reps.substring(1);
+    weight = weight.substring(1);
+    url_call += reps + "/" + weight
+    $.post(url_call);
+    var cont = $(event.target).closest('.expandedLift');
+    var inner = cont.html();
+    cont.html("<p class=\"notify\">Lift added to history!</p>");
+    window.setTimeout(partB,1000);
 
+    function partB() {
+      cont.html(inner);
+    }
+  }
+}
 

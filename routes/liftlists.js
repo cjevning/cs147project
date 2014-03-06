@@ -49,9 +49,7 @@ exports.create = function(req, res) {
 			    "lastDone": new Date('Jan 24, 1992')
 			  });
 			  newList.save(afterSave);
-			  console.log("===============" + newList);
 			  function afterSave(err, resu) {
-			  	console.log("-------------" + resu[0]);
 			    if(err) console.log(err);
 			    var newest = models.LiftList.find({"_id": newList._id}).exec(red);
 
