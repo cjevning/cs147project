@@ -81,13 +81,14 @@
           <div class="panel-body">
             <div class="expandedList">
               <div class="statsContainer">
-                <form id="new-list-form" role="form">
-                  <div class="form-group">
-                    <label for="title">Title for Workout:</label>
-                    <input type="text" class="form-control" id="title" placeholder="Workout">
-                  </div>
-                  <button id="newListSubmitButton" type="button" class="btn btn-default" onclick="createList()">Create and Start Adding Lifts</button>
-                </form>
+                <div id="formDiv">
+                  <form id="username-form" action="user_login" role="form">
+                    <div class="form-group">
+                      <label for="title">Title for Workout:</label>
+                      <input type="text" class="form-control" id="title" placeholder="Workout"><button id="newListSubmitButton" type="button" class="btn btn-default login buttonH" onclick="createList()">Create</button></input>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
