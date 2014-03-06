@@ -72,6 +72,12 @@ function addLift() {
   }
 }
 
+function viewLift() {
+  var liftName = $(event.target).closest('viewButton').attr('id');
+  var url_call = '/viewLift/' + liftName;
+  window.location.replace(url_call);
+}
+
 function createList() {
     var title = $('#new-list-form #title').val();
     if (title == "") alert("You must name your liftlist!");
