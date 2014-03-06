@@ -82,9 +82,11 @@
         var count = 0;
       </script>
       <div class="panel-group" id="accordion">
-      {{#each hists}}
+      {{#each keys}}
 
-        {{this.[1].liftName}}
+        {{#each ../hists.keys}}
+          {{this.liftName}}
+        {{/each}}
             
         
       <div class="panel panel-default accHeight">
