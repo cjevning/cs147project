@@ -33,7 +33,10 @@ exports.view = function(req, res){
 							    }
 							    else x[obj.liftName].push(obj);
 							}
-
+							for (var key in x) {
+							  var arr = x[key];
+							  keys.push({ name: key, lift: arr})
+							}
 							console.log(x);
                     		
 							res.render('user_history', { 'hists': x, 'keys': keys });
