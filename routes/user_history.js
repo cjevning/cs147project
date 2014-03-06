@@ -35,9 +35,13 @@ exports.view = function(req, res){
 							}
 							for (var key in x) {
 							  var arr = x[key];
-							  keys.push({ 'name': key, 'lift': arr})
+							  var html = "<div class=\"panel panel-default accHeight\"><div class=\"panel-heading override\">" +
+							   "<table class=\"override\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + arr.liftName
+							    + "\"><tr class=\"override\"><td class=\"rowName override\" id=\"row" + arr.liftName + "\">" + 
+							    "<div class=\"override itemName\">" + arr.liftName + "</div></td><td class=\"dropDown\"></td></tr>" +
+							    "</table></div></div>";
+							  	keys.push(html);
 							}
-							console.log(x);
                     		
 							res.render('user_history', { 'hists': x, 'keys': keys });
                     	}
