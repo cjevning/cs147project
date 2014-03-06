@@ -82,12 +82,12 @@
         var count = 0;
       </script>
       <div class="panel-group" id="accordion">
-      {{#each hists}}
-        {{#each this}}
+      {{#each keys}}
+
+        
             <script type="text/javascript">
-          alert("{{this}}");
+          alert("{{hists[this].liftName}}");
         </script>
-        {{/each}}
         
       <div class="panel panel-default accHeight">
         <div class="panel-heading override">

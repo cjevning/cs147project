@@ -22,18 +22,20 @@ exports.view = function(req, res){
                     	if (c == len) {
                     		hists.sort(function(a,b) { return ((a.liftName  == b.liftName) ? 0 : ((a.liftName>b.liftName) ? -1 : 1 )); } );
                     		var x = {};
+                    		var keys = {};
 
 							for (var i = 0; i < hists.length; ++i) {
 							    var obj = hists[i];
 
 							    if (x[obj.liftName] == undefined)
 							        x[obj.liftName] = [obj];
-							    else     x[obj.liftName].push(obj);
+							    	keys.push(obj.liftName);
+							    else x[obj.liftName].push(obj);
 							}
 
 							console.log(x);
                     		
-							res.render('user_history', { 'hists': x });
+							res.render('user_history', { 'hists': x, 'keys': keys });
                     	}
                   	}
 				}
