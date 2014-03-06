@@ -83,13 +83,13 @@
       </script>
       <div class="panel-group" id="accordion">
       {{#each hists}}
-          {{@key}}
           {{#each this}}
+            <script type="text/javascript">
+          alert({{this}});
+        </script>
             {{this liftName}}
           {{/each}}
-        <script type="text/javascript">
-          alert({{@key}});
-        </script>
+        
       <div class="panel panel-default accHeight">
         <div class="panel-heading override">
           <script>
