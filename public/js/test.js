@@ -88,7 +88,8 @@ function viewLiftStore() {
 
 function createList() {
     var title = $('#new-list-form #title').val();
-    if (title == "") alert("You must name your liftlist!");
+    console.log(title);
+    if (title == "") alert("You must name your workout!");
     else window.location.replace('/liftlists/create/' + title);
 }
 
