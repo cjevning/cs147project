@@ -27,9 +27,10 @@ exports.view = function(req, res){
 							for (var i = 0; i < hists.length; ++i) {
 							    var obj = hists[i];
 
-							    if (x[obj.liftName] == undefined)
+							    if (x[obj.liftName] == undefined) {
 							        x[obj.liftName] = [obj];
 							    	keys.push(obj.liftName);
+							    }
 							    else x[obj.liftName].push(obj);
 							}
 
