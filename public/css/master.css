@@ -487,6 +487,11 @@ a:hover {
   color: white;
 }
 
+.buttonH2 {
+  margin-bottom: 10px;
+  left: 12%;
+}
+
 .lockTop {
   position: fixed;
   top: 9vh;
@@ -518,6 +523,7 @@ a:hover {
 }
 
 .center {
+  width: 100%;
   text-align: center;
   font-weight: bold;
 }
