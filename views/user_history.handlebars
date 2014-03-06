@@ -83,11 +83,9 @@
       </script>
       <div class="panel-group" id="accordion">
       {{#each hists}}
-        {{#each this}}
           {{@key}}
           {{#each this}}
             {{this liftName}}
-          {{/each}}
           {{/each}}
         <script type="text/javascript">
           alert({{@key}});
