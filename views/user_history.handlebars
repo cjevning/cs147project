@@ -83,6 +83,10 @@
       </script>
       <div class="panel-group" id="accordion">
       {{#each hists}}
+        Key: {{@key}} Value = {{this}}
+        <script type="text/javascript">
+          alert(Key);
+        </script>
       <div class="panel panel-default accHeight">
         <div class="panel-heading override">
           <script>
@@ -96,6 +100,8 @@
               <!--<td class="rowName override" id="row<%= count %>">-->
                 <div class="override itemName">
                   {{liftName}}
+
+                  {{Value liftName}}
                 </div>
               </td>
               <td class="dropDown">                  
