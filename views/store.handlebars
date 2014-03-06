@@ -61,24 +61,24 @@
         </div>
       </div><!-- /.container-fluid -->
     </nav>
+
+    <div class="panel panel-default accHeight lockTop">
+      <div class="panel-heading override">
+        <a class="invis" href="../liftlists">
+          <table class="override">
+            <tr class="override">
+              <td class="rowName override" id="rowLast">
+                <div class="override itemName">Done Adding Lifts</div>
+              </td>
+              <td class="deleteButton"></td>
+            </tr>
+          </table>
+        </a>
+      </div>
+    </div>
+
+    
     <div id="tableDiv" name="Lift">
-      <!--
-      <div class="panel-group accHeight" id="accordion">
-        <div class="panel panel-default accHeight">
-          <div class="panel-heading override">
-            <a class="invis" href="placeholder.html">
-              <table class="override">
-                <tr class="override">
-                  <td class="rowName override" id="row0">
-                    <div class="override itemName">Create a Lift</div>
-                  </td>
-                  <td class="plusButton"></td>
-                </tr>
-              </table>
-            </a>
-          </div>
-        </div>
-      </div>-->
       {{#each lifts}}
       <div class="panel panel-default accHeight">
         <div class="panel-heading override">
@@ -111,7 +111,7 @@
               <table class="liftButtons">
                 <tr class="innerLiftButton">
                   <td class="innerLiftButton">
-                    
+
                     <div class="innerLiftButton addButton" onclick="addLift()" id="{{id}}">
                     </div>
                     <div class="buttonUnder">Add</div>
