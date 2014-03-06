@@ -83,9 +83,11 @@
       </script>
       <div class="panel-group" id="accordion">
       {{#each hists}}
+        {{#each this}}
             <script type="text/javascript">
-          alert("{{hists}}");
+          alert("{{this}}");
         </script>
+        {{/each}}
         
       <div class="panel panel-default accHeight">
         <div class="panel-heading override">
