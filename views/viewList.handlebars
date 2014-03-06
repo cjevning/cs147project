@@ -74,61 +74,62 @@
       </div>
     </div>
     <div id="tableDiv" name="Lift" >   
-    <script type="text/javascript">
-      var count = 0;
-    </script>
-    {{#each lifts}}
-      <div class="panel panel-default accHeight">
-        <div class="panel-heading override">
-          <script>
-            document.write("<table class=\"override\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + count + "\">");
-          </script>
-            <tr class="override">
-              <script>
-                document.write("<td class=\"rowName override\" id=\"row" + count + "\">");
-              </script>
-                <div class="override itemName">
-                  {{name}}
-                </div>
-              </td>
-              <td class="dropDown">                  
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <script>
-        document.write("<div id=\"collapse" + count + "\" class=\"panel-collapse collapse\">");
+      <script type="text/javascript">
+        var count = 0;
       </script>
-      <div id="{{id}}" class="idHolder">
-        <div class="panel-body">
-          <div class="expandedLift">
-            <div class="statsContainer">
-              <table class="liftStats">
-                <tr class="storeRow" onclick="viewLift()" id="{{name}}">
-                  <td>
-                    <p class="storeInfo">More Info... </p>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <div class="buttonsContainer">
-              <table class="liftButtons">
-                <tr class="innerLiftButton">
-                  <td class="innerLiftButton doneButtonDiv">
-                    <div class="innerLiftButton deleteButton" onclick="deleteLiftFromList()">
-                    </div>
-                    <div class="buttonUnder">Delete</div>
-                  </td>
-                </tr>
-              </table>
+      {{#each lifts}}
+        <div class="panel panel-default accHeight">
+          <div class="panel-heading override">
+            <script>
+              document.write("<table class=\"override\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + count + "\">");
+            </script>
+              <tr class="override">
+                <script>
+                  document.write("<td class=\"rowName override\" id=\"row" + count + "\">");
+                </script>
+                  <div class="override itemName">
+                    {{name}}
+                  </div>
+                </td>
+                <td class="dropDown">                  
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <script>
+          document.write("<div id=\"collapse" + count + "\" class=\"panel-collapse collapse\">");
+        </script>
+        <div id="{{id}}" class="idHolder">
+          <div class="panel-body">
+            <div class="expandedLift">
+              <div class="statsContainer">
+                <table class="liftStats">
+                  <tr class="storeRow" onclick="viewLift()" id="{{name}}">
+                    <td>
+                      <p class="storeInfo">More Info... </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="buttonsContainer">
+                <table class="liftButtons">
+                  <tr class="innerLiftButton">
+                    <td class="innerLiftButton doneButtonDiv">
+                      <div class="innerLiftButton deleteButton" onclick="deleteLiftFromList()">
+                      </div>
+                      <div class="buttonUnder">Delete</div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
         </div>
+        <script type="text/javascript">
+          count += 1;
+        </script>
       </div>
-      <script type="text/javascript">
-        count += 1;
-      </script>
       {{/each}}
     </div>
   </div>
