@@ -35,7 +35,7 @@ exports.view = function(req, res){
 							}
 							for (var key in x) {
 							  var arr = x[key];
-							  keys.push({ name: key, lift: arr})
+							  keys.push({ 'name': key, 'lift': arr})
 							}
 							console.log(x);
                     		
