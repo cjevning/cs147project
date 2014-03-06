@@ -22,7 +22,7 @@ exports.view = function(req, res){
                     	if (c == len) {
                     		hists.sort(function(a,b) { return ((a.liftName  == b.liftName) ? 0 : ((a.liftName>b.liftName) ? -1 : 1 )); } );
                     		var x = {};
-                    		var keys = {};
+                    		var keys = [];
 
 							for (var i = 0; i < hists.length; ++i) {
 							    var obj = hists[i];
