@@ -89,7 +89,7 @@
 }
 
 .logo img{
-  height: 40%;
+  height: 100%;
   margin-top: 2px;
   width: 100%;
 }
@@ -143,6 +143,7 @@
 .accHeight {
   height: 100%;
   margin: 0px;
+  position: relative;
 }
 
 .panel {
@@ -305,6 +306,7 @@ a:hover {
 
 .expandedLift {
   width: 100%;
+  overflow: hidden;
 }
 
 .statsContainer {
@@ -312,9 +314,24 @@ a:hover {
   float: left;
 }
 
+.storeStatsContainer {
+  display: table;
+  width: 90%;
+  float: left;
+}
+
 .buttonsContainer {
   width: 10%;
   float: right;
+  position: absolute;
+  right: 100%;
+  left: 90%;
+}
+
+.storeInfo {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 3%;
 }
 
 .liftButtons {
@@ -393,6 +410,7 @@ a:hover {
 
 .inline {
   display: inline-block;
+  padding-left: 3%;
 }
 
 .buttonUnder {
@@ -495,7 +513,6 @@ a:hover {
 
 .buttonH2 {
   margin-bottom: 10px;
-  left: 12%;
 }
 
 .lockTop {
@@ -532,4 +549,13 @@ a:hover {
   width: 100%;
   text-align: center;
   font-weight: bold;
+  margin-top: 5px;
+}
+
+.panel-body2 {
+  min-height: 22vh;
+}
+
+.date {
+  margin-left: 3%;
 }

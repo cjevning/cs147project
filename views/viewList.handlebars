@@ -73,7 +73,8 @@
           </table>
       </div>
     </div>
-    <div id="tableDiv3" name="Lift" >   
+    <div id="tableDiv3" name="Lift" >  
+    <div id="{{id}}" class="Cont"> 
       <script type="text/javascript">
         var count = 0;
       </script>
@@ -103,14 +104,8 @@
         <div id="{{id}}" class="idHolder">
           <div class="panel-body">
             <div class="expandedLift">
-              <div class="statsContainer">
-                <table class="liftStats">
-                  <tr class="storeRow" onclick="viewLift()" id="{{name}}">
-                    <td>
-                      <p class="storeInfo">More Info... </p>
-                    </td>
-                  </tr>
-                </table>
+              <div class="storeStatsContainer liftStats storeRow" onclick="viewLift()" id="{{name}}">
+                <p class="storeInfo">More Info... </p>
               </div>
               <div class="buttonsContainer">
                 <table class="liftButtons">
@@ -131,6 +126,7 @@
         </script>
       </div>
       {{/each}}
+    </div>
     </div>
   </div>
   </body>

@@ -81,35 +81,12 @@
       <div id="collapse{{id}}" class="panel-collapse collapse">
         <div class="panel-body">
           <div class="expandedLift">
-            <div class="statsContainer">
-              <table class="liftStats">
-                <tr class="storeRow" onclick="viewLiftStore()" id="{{name}}">
-                  <td>
+            <div class="storeStatsContainer liftStats storeRow" onclick="viewLiftStore()" id="{{name}}">
                   <p class="storeInfo">More Info... </p>
-                </td>
-                </tr>
-              </table>
             </div>
             <div class="buttonsContainer">
-              <table class="liftButtons">
-                <tr class="innerLiftButton">
-                  <td class="innerLiftButton">
-
-                    <div class="innerLiftButton addButton" onclick="addLift()" id="{{id}}">
-                    </div>
-                    <div class="buttonUnder">Add</div>
-                  </td>
-                </tr>
-                
-                <!--
-                <tr class="innerLiftButton">
-                  <td class="innerLiftButton">
-                    <div class="innerLiftButton viewButton">
-                    </div>
-                  </td>
-                </tr>
-              -->
-              </table>
+              <div class="liftButtons innerLiftButton addButton" onclick="addLift()" id="{{id}}"></div>
+              <div class="buttonUnder">Add</div>
             </div>
           </div>
         </div>

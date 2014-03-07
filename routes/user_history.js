@@ -20,30 +20,8 @@ exports.view = function(req, res){
                     showPage(count);
                     function showPage(c) {
                     	if (c == len) {
-                    		hists.sort(function(a,b) { return ((a.liftName  == b.liftName) ? 0 : ((a.liftName>b.liftName) ? -1 : 1 )); } );
-                    		var x = {};
-                    		var keys = [];
-
-							for (var i = 0; i < hists.length; ++i) {
-							    var obj = hists[i];
-
-							    if (x[obj.liftName] == undefined) {
-							        x[obj.liftName] = [obj];
-							    	keys.push(obj.liftName);
-							    }
-							    else x[obj.liftName].push(obj);
-							}
-							for (var key in x) {
-							  var arr = x[key];
-							  var html = "<div class=\"panel panel-default accHeight\"><div class=\"panel-heading override\">" +
-							   "<table class=\"override\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + arr.liftName
-							    + "\"><tr class=\"override\"><td class=\"rowName override\" id=\"row" + arr.liftName + "\">" + 
-							    "<div class=\"override itemName\">" + arr.liftName + "</div></td><td class=\"dropDown\"></td></tr>" +
-							    "</table></div></div>";
-							  	keys.push(html);
-							}
-                    		
-							res.render('user_history', { 'hists': x, 'keys': keys });
+                    		hists.sort(function(a,b) { return ((a.date  == b.date) ? 0 : ((a.date>b.date) ? -1 : 1 )); } );
+							res.render('user_history', { 'hists': hists });
                     	}
                   	}
 				}

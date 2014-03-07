@@ -126,7 +126,7 @@
       <!--<div id="collapse<%= count %>" class="panel-collapse collapse">-->
         <div class="panel-body">
           <div class="expandedList">
-            <div class="statsContainer">
+            <div class="storeStatsContainer liftStats storeRow">
                 <script type="text/javascript">
                   var last = '{{lastDone}}';
                   var sp = last.split(" ");
@@ -135,9 +135,8 @@
                   if (year != '1992') {
                     x = sp[1] + " " + sp[2] + " " + sp[3];
                   }
-                  document.write("<p>Last Done: " + x + "</p>");
+                  document.write("<p class=\"storeInfo\">Last Done: " + x + "</p>");
                 </script>
-              
             </div>
             <div class="buttonsContainer">
               <table class="liftButtons">

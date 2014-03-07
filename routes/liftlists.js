@@ -114,8 +114,7 @@ exports.deleteFrom = function(req, res) {
 			function afterQuery(err, u) {
 				if(err) console.log(err);
 				console.log(u[0].lifts);
-				/////////TODO get this to only delete one
-			    u[0].lifts.remove(lift, 1);
+				u[0].lifts.remove(lift, 1);
 			    u[0].save(afterSave);
 			    console.log(u[0].lifts);
 			    function afterSave(err, projects) {

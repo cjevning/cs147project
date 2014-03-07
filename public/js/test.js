@@ -73,7 +73,7 @@ function addLift() {
 }
 
 function viewLift() {
-  var liftName = $(event.target).closest('.viewButton').attr('id');
+  var liftName = $(event.target).closest('.storeRow').attr('id');
   var url_call = '/viewLift/non/' + liftName;
   window.location.replace(url_call);
 }

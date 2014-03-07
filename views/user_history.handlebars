@@ -82,13 +82,62 @@
         var count = 0;
       </script>
       <div class="panel-group" id="accordion">
-      {{#each keys}}
-
-        {{this}}
-     {{/each}}
- 
-        
-      
+      {{#each hists}}
+      <div class="panel panel-default accHeight">
+        <div class="panel-heading override">
+          <script>
+            document.write("<table class=\"override\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + count + "\">");
+          </script>
+          <!--<table class="override" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= count %>">-->
+            <tr class="override">
+              <script>
+                document.write("<td class=\"rowName override\" id=\"row" + count + "\">");
+              </script>
+              <!--<td class="rowName override" id="row<%= count %>">-->
+                <div class="override itemName">
+                  {{liftName}}
+                </div>
+              </td>
+              <td class="dropDown">                  
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <script>
+        document.write("<div id=\"collapse" + count + "\" class=\"panel-collapse collapse\">");
+      </script>
+      <!--<div id="collapse<%= count %>" class="panel-collapse collapse">-->
+        <div class="panel-body">
+          <div class="expandedLift" id="{{name}}">
+            <div class="statsContainer">
+              <table class="liftStats">
+                <tr class="">
+                  <td class="half">
+                    <div class="date">
+                    <p class="innerInfo">{{date}}</p>
+                  </div>
+                    <div class="inline">
+                    {{#each reps}}
+                      <p class="innerInfo">{{this}} reps </p>
+                    {{/each}}
+                  </div>
+                  <div class="inline">
+                    {{#each weight}}
+                      <p class="innerInfo">{{this}} lbs </p>
+                    {{/each}}
+                  </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        count += 1;
+      </script>
+      {{/each}}
       </div>
     </div>
   </body>
