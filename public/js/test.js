@@ -250,3 +250,13 @@ function addToHistory3 () {
     }
   }
 }
+
+Handlebars.registerHelper('ifTaken', function(error) {
+  if (error == "Taken") return true;
+  return false;
+});
+
+Handlebars.registerHelper('ifNonExist', function(error) {
+  if (error == "NonExist") return true;
+  return false;
+});

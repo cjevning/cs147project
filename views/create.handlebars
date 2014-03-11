@@ -20,7 +20,7 @@
   
   	
     {{#if showAlt}}
-    {{#if errorMessage == "NonExist"}}
+    {{#ifTaken errorMessage}}
       <script type="text/javascript">alert("That username is already in use! If it's yours, you can click the button below to go back and sign in, otherwise you'll need to come up with a new username.");</script>
     {{/if}}
     <div id="formDiv">
