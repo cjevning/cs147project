@@ -14,7 +14,7 @@ exports.login = function(req, res) {
 			  res.redirect('/');
 		}
 		else {
-			req.session.errorMessage = "That user doesn't exist! If you'd like, you can create an account below.";
+			req.session.errorMessage = "NonExist";
 			res.redirect('/');
 		}
 	}
@@ -34,7 +34,7 @@ exports.create = function(req, res) {
 	function afterQuery(err, results) {
 		if(err) console.log(err);
 		if(results[0]) {
-			req.session.errorMessage = "That username is already in use!"
+			req.session.errorMessage = "Taken"
 			res.redirect('create');
 		}
 		else {

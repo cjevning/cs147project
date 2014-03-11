@@ -41,7 +41,7 @@
   <!--<script src="js/homeTour.js"></script>-->
   {{else}}
     {{#if showAlt}}
-    {{#if errorMessage}}
+    {{#if errorMessage == "NonExist"}}
       <script type="text/javascript">alert("That username doesn't exist! You can create an account by clicking on the \"Sign Up\" button.");</script>
     {{/if}}
     <div id="signupCont"> 
