@@ -78,7 +78,64 @@
           </table>
         </div>
       </div>
-      <div id="collapse{{id}}" class="panel-collapse collapse panel-body expandedLift">
+      <div id="collapse{{id}}" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="expandedLift">
+            <div class="statsContainer">
+              <table class="liftStats">
+                <tr class="storeRow" onclick="viewLiftStore()" id="{{name}}">
+                  <td>
+                  <p class="storeInfo">More Info... </p>
+                </td>
+                </tr>
+              </table>
+            </div>
+            <div class="buttonsContainer">
+              <table class="liftButtons">
+                <tr class="innerLiftButton">
+                  <td class="innerLiftButton">
+
+                    <div class="innerLiftButton addButton" onclick="addLift()" id="{{id}}">
+                    </div>
+                    <div class="buttonUnder">Add</div>
+                  </td>
+                </tr>
+                
+                <!--
+                <tr class="innerLiftButton">
+                  <td class="innerLiftButton">
+                    <div class="innerLiftButton viewButton">
+                    </div>
+                  </td>
+                </tr>
+              -->
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {{/each}}
+      <!--
+      <div class="panel panel-default accHeight">
+        <div class="panel-heading override">
+          <table class="override" data-toggle="collapse" data-parent="#accordion" href="#collapse{{id}}">
+            <tr class="override">
+              <td class="rowName override" id="row{{id}}">
+                <div class="override itemName">
+                  {{name}}
+                </div>
+              </td>
+              <td class="dropDown">                  
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div id="collapse{{id}}" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="expandedLift">
             <div class="storeStatsContainer liftStats storeRow" onclick="viewLiftStore()" id="{{name}}">
                   <p class="storeInfo">More Info... </p>
             </div>
@@ -86,8 +143,10 @@
               <div class="liftButtons innerLiftButton addButton" onclick="addLift()" id="{{id}}"></div>
               <div class="buttonUnder">Add</div>
             </div>
+          </div>
+        </div>
       </div>
-      {{/each}}
+    -->
     </div>
     <!--
     <script src="js/hopscotch-0.1.2.js"></script>

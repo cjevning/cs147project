@@ -207,3 +207,46 @@ function addToHistory2 () {
   }
 }
 
+function addToHistory3 () {
+  var liftID = $(event.target).closest('.doneButtonDiv').attr('id');
+  var row = $(event.target).closest('.collapse');
+  var find = $(event.target).closest('.expandedLift');
+  var name = find.attr('id');
+  var children = find.find('.reps');
+  var children2 = find.find('.weight');
+  var url_call = '/user_history/'+liftID+'/'+name+'/';
+  var reps = "";
+  var weight = "";
+  var good = true;
+  for (var i = 0; i < children.length; i++) {
+    var addRep = children.eq(i).val();
+    var addWeight = children2.eq(i).val();
+    if (addRep == "" || addWeight == "") {
+      good = false;
+      alert("You must have all fields filled in!");
+      break;
+    }
+    reps += "_" + addRep;
+    weight += "_" + addWeight;
+  }
+  if (good) {
+    reps = reps.substring(1);
+    weight = weight.substring(1);
+    url_call += reps + "/" + weight
+    $.post(url_call);
+    var cont = $(event.target).closest('.expandedLift');
+    var inner = cont.html();
+    cont.html("<p class=\"notify\">Lift added to history!</p>");
+    window.setTimeout(partB,1000);
+
+    function partB() {
+      row.removeClass("in");
+      cont.html(inner);
+      var rowID = row.attr("id");
+      var currNum = parseInt(rowID.substring(8));
+      currNum += 1;
+      var findID = "#collapse" + currNum;
+      var toOpen = $(findID).addClass("in");
+    }
+  }
+}
