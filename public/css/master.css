@@ -101,6 +101,10 @@
     padding-bottom: 2%;
 }
 
+.inputHeightLock {
+  height: 10vh;
+}
+
 .searchBar {
   width: 100%;
   height: 100%;
@@ -463,6 +467,7 @@ a:hover {
   height: 10vh;
   text-align: center;
   padding-bottom: 2vh;
+  margin-top: 20vh;
 }
 
 #orDiv {
