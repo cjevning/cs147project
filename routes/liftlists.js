@@ -114,9 +114,9 @@ exports.deleteFrom = function(req, res) {
 			function afterQuery(err, u) {
 				if(err) console.log(err);
 				console.log(u[0].lifts);
-				u[0].lifts.remove(lift, 1);
+				var index = u[0].lifts.indexOf(lift);
+			    u[0].lifts.splice(index, 1);
 			    u[0].save(afterSave);
-			    console.log(u[0].lifts);
 			    function afterSave(err, projects) {
 			      if(err) console.log(err);
 			      res.send();

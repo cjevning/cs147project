@@ -56,6 +56,8 @@
   background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
+  display: table-cell;
+  position: absolute;
 }
 
 .plusButton {
@@ -84,7 +86,7 @@
 }
 
 .logo {
-  height: 40%;
+  height: 40vh;
   width: 100%;
 }
 
@@ -278,12 +280,14 @@
 
 .rowName {
   width: 90%;
+  display: table-row;
 }
 
 .itemName {
   height: 9vh;
   line-height: 9vh;
   padding-left: 3%;
+  display: table-cell;
 }
 
 a {
@@ -302,6 +306,10 @@ a:hover {
 .panel-body {
   width: 100%;
   padding: 0px;
+}
+
+.panel-heading {
+  display: table;
 }
 
 .expandedLift {
@@ -559,3 +567,4 @@ a:hover {
 .date {
   margin-left: 3%;
 }
+
