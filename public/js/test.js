@@ -251,12 +251,12 @@ function addToHistory3 () {
   }
 }
 
-Handlebars.registerHelper('ifTaken', function(error) {
+Handlebars.registerHelper('ifTaken', function(error, options) {
   if (error == "Taken") return true;
   return false;
 });
 
-Handlebars.registerHelper('ifNonExist', function(error) {
+Handlebars.registerHelper('ifNonExist', function(error, options) {
   if (error == "NonExist") return true;
   return false;
 });
