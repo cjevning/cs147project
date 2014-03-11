@@ -311,6 +311,10 @@ a:hover {
   width: 100%;
 }
 
+.panel-default {
+  width: 100%;
+}
+
 .statsContainer {
   width: 90%;
   float: left;
@@ -544,8 +548,16 @@ a:hover {
   float: left;
 }
 
-.storeInfo {
-  display: table-cell;
+.storeInfoCell {
   vertical-align: middle;
   padding-left: 3%;
+}
+
+.storeInfo {
+  vertical-align: middle;
+  margin: 0px;
+}
+
+.tcell {
+  display: table-cell;
 }
