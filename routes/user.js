@@ -2,40 +2,41 @@ var models = require('../models');
 
 exports.login = function(req, res) {
  	var username = req.query.username;
- 	req.session.errorMessage = null;
+ 	req.session.nonErrorMessage = null;
+ 	req.session.takenErrorMessage = null;
 	models.User.find({"username": username}).exec(afterQuery);
-
 	function afterQuery(err, results) {
 		if(err) console.log(err);
 		if(results[0]) {
 			req.session.username = username;
-
 			  // send them back to the homepage
 			  res.redirect('/');
 		}
 		else {
-			req.session.errorMessage = "NonExist";
-			res.redirect('/');
+			req.session.nonErrorMessage = "NonExist";
+			res.render('index', {"nonErrorMessage": "nonExist", "showAlt": true});
 		}
 	}
 }
 
 exports.logout = function(req, res) {
   req.session.username = null;
-  req.session.errorMessage = null;
+  req.session.nonErrorMessage = null;
+  req.session.takenErrorMessage = null;
   res.redirect('/');
 }
 
 exports.create = function(req, res) {
 	var username = req.query.username;
-	req.session.errorMessage = null;
+	req.session.nonErrorMessage = null;
+  	req.session.takenErrorMessage = null;
 	models.User.find({"username": username}).exec(afterQuery);
 
 	function afterQuery(err, results) {
 		if(err) console.log(err);
 		if(results[0]) {
-			req.session.errorMessage = "Taken"
-			res.redirect('create');
+			req.session.takenErrorMessage = "Taken"
+			res.render('create', {"takenErrorMessage": "taken", "showAlt": true});
 		}
 		else {
 			var newUser = new models.User({
