@@ -82,7 +82,8 @@
         var count = 0;
       </script>
       <div class="panel-group" id="accordion">
-      {{#each hists}}
+      {{#each hists}}     
+
       <div class="panel panel-default accHeight">
         <div class="panel-heading override">
           <script>
@@ -95,7 +96,7 @@
               </script>
               <!--<td class="rowName override" id="row<%= count %>">-->
                 <div class="override itemName">
-                  {{liftName}}
+                  {{this.0.liftName}}
                 </div>
               </td>
               <td class="dropDown">                  
@@ -104,36 +105,59 @@
           </table>
         </div>
       </div>
+
       <script>
         document.write("<div id=\"collapse" + count + "\" class=\"panel-collapse collapse\">");
       </script>
+      
+      
       <!--<div id="collapse<%= count %>" class="panel-collapse collapse">-->
         <div class="panel-body">
-          <div class="expandedLift" id="{{name}}">
-            <div class="statsContainer">
-              <table class="liftStats">
-                <tr class="">
-                  <td class="half">
+          <div class="expandedLift" id="{{this.0.liftName}}">
+            <div class="statsContainer fullWidth">
+              <table class="liftStatsTable">
+                {{#each this}}
+                  <th class="half borderedRow">
                     <div class="date">
-                    <p class="innerInfo">{{date}}</p>
-                  </div>
+                      <script type="text/javascript">
+                        var last = '{{date}}';
+                  var sp = last.split(" ");
+                  var year = sp[3];
+                  var x = "Never";
+                  if (year != '1992') {
+                    x = sp[0] + ", " + sp[1] + " " + sp[2] + ", " + sp[3];
+                  }
+                        document.write("<p class=\"innerInfo\">"+x+"</p>");
+                      </script>
+                    </div>
+                  </th>
+                  <tr class="borderedRow">
+                    <td class="borderedRow">
                     <div class="inline">
                     {{#each reps}}
+                    <div class="noRight">
                       <p class="innerInfo">{{this}} reps </p>
+                    </div>
                     {{/each}}
                   </div>
                   <div class="inline">
                     {{#each weight}}
+
+                    <div class = "noLeft">
                       <p class="innerInfo">{{this}} lbs </p>
+                    </div>
                     {{/each}}
                   </div>
                   </td>
                 </tr>
+                {{/each}}
               </table>
             </div>
           </div>
         </div>
+        
       </div>
+
       <script type="text/javascript">
         count += 1;
       </script>

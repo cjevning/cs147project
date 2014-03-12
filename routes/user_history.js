@@ -19,10 +19,34 @@ exports.view = function(req, res){
 					count += 1;
                     showPage(count);
                     function showPage(c) {
+
+
+                    	if (c == len) {
+                    		hists.sort(function(a,b) { return ((a.date  == b.date) ? 0 : ((a.date>b.date) ? -1 : 1 )); } );
+                    		var x = {};
+
+							for (var i = 0; i < hists.length; ++i) {
+							    var obj = hists[i];
+
+							    if (x[obj.liftName] == undefined) {
+							        x[obj.liftName] = [obj];
+							    }
+							    else x[obj.liftName].push(obj);
+							}
+
+                    		
+							res.render('user_history', { 'hists': x });
+                    	}
+
+
+
+
+						/*
                     	if (c == len) {
                     		hists.sort(function(a,b) { return ((a.date  == b.date) ? 0 : ((a.date>b.date) ? -1 : 1 )); } );
 							res.render('user_history', { 'hists': hists });
                     	}
+                    	*/
                   	}
 				}
 			}
@@ -42,7 +66,7 @@ exports.addTo = function(req, res) {
 		if(err) console.log(err);
 		if(results[0]) {
 			var now = new Date();
-        	now.setHours( now.getHours() - 8 );
+        	now.setHours( now.getHours() - 7 );
         	var name = req.params.name;
 			var repsPS = req.params.reps;
 			var weightPS = req.params.weight;
@@ -70,7 +94,6 @@ exports.addTo = function(req, res) {
 				    
 				    function red(err, list) {
 					    if(err) console.log(err);
-					    console.log(list[0]);
 					    var id = list[0]._id;
 					    results[0].history.push(list[0]._id);
 					    results[0].save(afterS);

@@ -103,6 +103,7 @@
 
 .inputHeightLock {
   height: 10vh;
+  min-height: 15px;
 }
 
 .searchBar {
@@ -477,6 +478,7 @@ a:hover {
   padding-top: 2vh;
   padding-bottom: 1vh;
   text-align: center;
+  min-height: 15px;
 }
 
 #orDiv2 {
@@ -484,6 +486,7 @@ a:hover {
   padding-top: 2vh;
   padding-bottom: 1vh;
   text-align: center;
+  min-height: 15px;
 }
 
 .buttonH {
@@ -499,6 +502,7 @@ a:hover {
   font-size: 150%;
   font-weight: normal;
   color: white;
+  min-height: 15px;
 }
 
 .buttonH2 {
@@ -567,4 +571,26 @@ a:hover {
 
 .tcell {
   display: table-cell;
+}
+
+
+.borderedRow {
+  border: solid;
+  border-width: 1px 0px;
+  border-color: black;
+  border-left: 0px;
+  padding: 5px;
+}
+
+.innerInfo{
+  margin: 0px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.liftStatsTable {
+  width: 100%;
+  font-size: 11pt;
 }

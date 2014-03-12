@@ -88,13 +88,13 @@ function addLift2() {
 function viewLift() {
   var liftName = $(event.target).closest('.storeRow').attr('id');
   var url_call = '/viewLift/non/' + liftName;
-  window.location.replace(url_call);
+  window.location.href = url_call;
 }
 
 function viewLiftStore() {
   var liftName = $(event.target).closest('.storeRow').attr('id');
   var url_call = '/viewLift/store/' + liftName;
-  window.location.replace(url_call);
+  window.location.href = url_call;
 }
 
 
@@ -102,7 +102,7 @@ function viewLiftStore() {
 function createList() {
     var title = $('#new-list-form #title').val();
     if (title == "") alert("You must name your workout!");
-    else window.location.replace('/liftlists/create/' + title);
+    else window.location.href = '/liftlists/create/' + title;
 }
 
 function addToList () {
@@ -126,13 +126,13 @@ function addToList () {
 
 function forwardToLIP () {
   var listID = $(event.target).closest('.Cont').attr('id');
-  window.location.replace('/listInProgress/' + listID);
+  window.location.href = '/listInProgress/' + listID;
 }
 
 
 function forwardToAdd () {
   var listID = $(event.target).closest('.Cont').attr('id');
-  window.location.replace('/addLifts/' + listID);
+  window.location.href = '/addLifts/' + listID;
 }
 
 function deleteLiftFromList () {
