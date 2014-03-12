@@ -10,14 +10,13 @@ def getAllPossibleURLS():
     for letter in string.lowercase:
         results.append(base + letter)
     return results
-
+ 
 def containsAttr(a):
     typeArr = ["Type", "Main Muscle Worked", "Equipment", "Mechanics Type", "Level", "Sport", "Force"]
     for item in typeArr:
         if item in a:
             return True
     return False
-
 
 class LiftSpider(Spider):
     name = "body"
@@ -52,7 +51,7 @@ class LiftSpider(Spider):
         'http://www.bodybuilding.com/exercises/list/index/selected/y',
         'http://www.bodybuilding.com/exercises/list/index/selected/z',
         'http://www.bodybuilding.com/exercises/list/index/selected/#'
-        ] #getAllPossibleURLS()
+        ]
 
     def parse(self, response):
         sel = Selector(response)
@@ -82,10 +81,10 @@ class LiftSpider(Spider):
                 item = liftItem()
                 name  = temp;
 
-            attributes = sel.xpath('//div[@id= "exerciseDetails"]/*/*/text()');  
-            i = 0
-            pictures = sel.xpath('//div[@class = "exercisePhotos"]//img/@src')
-
+            # attributes = sel.xpath('//div[@id= "exerciseDetails"]/*/*/text()');  
+            # i = 0
+            # pictures = sel.xpath('//div[@class = "exercisePhotos"]//img/@src');
+            # descriptions = sel.xpath('//div[@class = "guideContent"]/*/*/text()');
             # for attr in attributes:
             #     print "\nattr[" + i + "] = "
             #     print attr
@@ -97,6 +96,7 @@ class LiftSpider(Spider):
             # item['mainMuscle'] = str(attributes.extract()[1].strip()) #str(attributes)#str(response)[2]
             # item['pictureOne'] = str(pictures.extract()[0].strip())
             # item['pictureTwo'] = str(pictures.extract()[2].strip())
+            # item['description'] = str(descriptions.extract()[0].strip());
             
             # print item['name'];
             yield item

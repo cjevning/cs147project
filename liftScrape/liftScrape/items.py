@@ -11,3 +11,4 @@ class liftItem(Item):
 	excerciseType = Field()
 	pictureOne = Field()
 	pictureTwo = Field()
+	description = Field()
