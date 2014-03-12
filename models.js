@@ -7,6 +7,7 @@ var LiftSchema = new Mongoose.Schema({
 	"excerciseType": String,
 	"pictureOne": String, 
 	"pictureTwo": String,
+	"description": String
 });
 
 var LiftName = new Mongoose.Schema({

@@ -72,6 +72,19 @@ function addLift() {
   }
 }
 
+function addLift2() {
+  var liftName = $(event.target).attr('id');
+  var row = $(event.target);
+  var url_call = '/store/addLift2/'+liftName;
+  $.post(url_call);
+  row.html("Added!");
+  window.setTimeout(partB,1000);
+
+  function partB() {
+    row.html("Add");
+  }
+}
+
 function viewLift() {
   var liftName = $(event.target).closest('.storeRow').attr('id');
   var url_call = '/viewLift/non/' + liftName;

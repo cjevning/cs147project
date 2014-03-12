@@ -13,7 +13,7 @@ exports.view = function(req, res){
         if(err) console.log(err);
         var lift = list[0];
         res.render('viewLift', { 'name': lift.name, 'mainMuscle': lift.mainMuscle, 'exerciseType': lift.excerciseType,
-           'pictureOne': lift.pictureOne, 'pictureTwo': lift.pictureTwo, 'store': false });        
+           'pictureOne': lift.pictureOne, 'pictureTwo': lift.pictureTwo, 'description': lift.description, 'store': false });        
       }
     }
     else {
@@ -36,7 +36,7 @@ exports.storeView = function(req, res){
         if(err) console.log(err);
         var lift = list[0];
         res.render('viewLift', { 'name': lift.name, 'mainMuscle': lift.mainMuscle, 'exerciseType': lift.excerciseType,
-           'pictureOne': lift.pictureOne, 'pictureTwo': lift.pictureTwo, 'store': true });        
+           'pictureOne': lift.pictureOne, 'pictureTwo': lift.pictureTwo, 'description': lift.description, 'store': true });        
       }
     }
     else {

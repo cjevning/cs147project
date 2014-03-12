@@ -505,6 +505,10 @@ a:hover {
   margin-bottom: 10px;
 }
 
+.buttonH3 {
+  border: 0px;
+}
+
 .lockTop {
   position: fixed;
   top: 9vh;
@@ -533,6 +537,10 @@ a:hover {
   margin-top: 1vh;
   margin-left: 2vw;
   margin-right: 2vw;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .pcenter {

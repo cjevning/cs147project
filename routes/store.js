@@ -36,3 +36,23 @@ exports.addLift = function(req, res) {
     }
   } 
 }
+
+exports.addLift2 = function(req, res) {
+  var username = req.session.username;
+  var liftName = req.params.name;
+  var user = models.User.find({"username": username}).exec(afterQuery);
+  function afterQuery(err, u) {
+    if(err) console.log(err);
+    var t = models.LiftName.find({"name": liftName}).exec(aq2);
+    function aq2(err, v) {
+      if(err) console.log(err);
+      var id = v[0]._id;
+      u[0].lifts.push(id);
+      u[0].save(afterSave);
+      function afterSave(err, projects) {
+        if(err) console.log(err);
+        res.send();
+      }
+    }
+  } 
+}

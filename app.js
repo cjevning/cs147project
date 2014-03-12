@@ -64,6 +64,7 @@ app.get('/create/b', create.viewAlt);
 app.get('/user_history', history.view);
 app.get('/store', store.view);
 app.post('/store/addLift/:id', store.addLift);
+app.post('/store/addLift2/:name', store.addLift2);
 app.get('/addLifts/:id', add.view);
 app.get('/liftlists/create/:name', liftlists.create);
 app.post('/liftlists/addTo/:listID/:liftID', liftlists.addTo);
