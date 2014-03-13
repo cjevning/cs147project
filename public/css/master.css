@@ -488,11 +488,11 @@ a:hover {
 }
 
 .buttonH {
-  height: 10vh;
-  width: 30vw;
+  height: 10%;
+  width: 30%;
   background-image: none;
   background-color: #ed730e;
-  padding: 2vh;
+  padding: 2%;
   border-radius: 10px;
   margin-right: auto;
   margin-left: auto;
