@@ -21,9 +21,9 @@
   
 
 
-  <div class="logo"><img id="Jim" src="./images/gym.png"></img></div>
+  
   {{#if username}}
-    
+    <div class="logo2"><img id="Jim" src="./images/gym.png"></img></div>
     <div class="buttonDiv"><a class="button" href="lifts" id="liftButton">Lifts</a>
     </div>
     <div class="buttonDiv"><a class="button liftlistbutton" href="liftlists" id="listButton">Workouts</a>
@@ -44,6 +44,7 @@
     {{#if nonErrorMessage}}
       <script type="text/javascript">alert("That username doesn't exist! You can create an account by clicking on the \"Sign Up\" button.");</script>
     {{/if}}
+    <div class="logo"><img id="Jim" src="./images/gym.png"></img></div>
     <div id="signupCont"> 
       <button class="btn btn-default inline buttonH" onclick="create()">Sign Up</button>
       <script type="text/javascript">
