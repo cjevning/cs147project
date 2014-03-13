@@ -103,7 +103,6 @@
 
 .inputHeightLock {
   height: 10vh;
-  min-height: 15px;
 }
 
 .searchBar {
@@ -479,7 +478,6 @@ a:hover {
 #orDiv {
   margin-top: 5vh;
   text-align: center;
-  min-height: 15px;
 }
 
 #orDiv2 {
@@ -487,7 +485,6 @@ a:hover {
   padding-top: 2vh;
   padding-bottom: 1vh;
   text-align: center;
-  min-height: 15px;
 }
 
 .buttonH {
@@ -503,7 +500,6 @@ a:hover {
   font-size: 150%;
   font-weight: normal;
   color: white;
-  min-height: 15px;
 }
 
 .buttonH2 {
