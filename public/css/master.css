@@ -453,7 +453,7 @@ a:hover {
 
 .input {
   position: absolute;
-  height: 55px;
+  height: 70px;
   border-radius: 10px;
 }
 
@@ -491,7 +491,7 @@ a:hover {
 }
 
 .buttonH {
-  height: 55px;
+  height: 70px;
   width: 30vw;
   background-image: none;
   background-color: #ed730e;
