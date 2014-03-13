@@ -474,7 +474,8 @@ a:hover {
 }
 
 .inOr {
-  margin-top: 5vh;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
 }
 
 .inOr2{
@@ -487,6 +488,7 @@ a:hover {
 
 #orDiv2 {
   margin-top: 15vh;
+  margin-bottom: 10vh;
   text-align: center;
 }
 
