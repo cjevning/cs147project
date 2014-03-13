@@ -466,17 +466,18 @@ a:hover {
 #formDiv {
   margin-left: 3vw;
   margin-right: 3vw;
+  margin-top: 5vh;
 }
 
 #signupCont {
   height: 10vh;
   text-align: center;
   padding-bottom: 2vh;
+  margin-top: 5vh;
 }
 
 #orDiv {
-  margin-top: 2vh;
-  margin-bottom: 1vh;
+  margin-top: 5vh;
   text-align: center;
   min-height: 15px;
 }
@@ -593,4 +594,8 @@ a:hover {
 .liftStatsTable {
   width: 100%;
   font-size: 11pt;
+}
+
+.x5 {
+  margin-left: 15px;
 }

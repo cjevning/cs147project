@@ -51,17 +51,17 @@
           <img src="{{pictureTwo}}" class="liftPic"></img>
         </div>
         <p class="liftInfo bold">How To Do It:</p>
-        <p class="liftInfo">{{description}}</p>
+        <p class="liftInfo x5">{{description}}</p>
         <p class="liftInfo bold">Exercise Type:</p>
-        <p class="liftInfo">{{exerciseType}}</p>
+        <p class="liftInfo x5">{{exerciseType}}</p>
         <p class="liftInfo bold">Main Muscle Worked:<p>
-        <p class="liftInfo">{{mainMuscle}}</p>
+        <p class="liftInfo x5">{{mainMuscle}}</p>
         {{#if store}}
           <button id="{{name}}" type="button" class="button buttonH3" onclick="addLift2()">Add</button>
         {{else}}
         <div class="expandedLift" id="{{name}}">
           <div class="statsContainer">
-            <div class="instr"><p>Record your lift stats here:</p></div>
+            <div class="instr bold"><p>Record your lift stats here:</p></div>
             <table class="liftStats">
               <tr class="setRow set">
                 <td class="buttonCell" onclick="deleteSet()">
@@ -70,7 +70,7 @@
                 </td>
                 <td class="setInfo">
                   <div class="set">
-                    <input type="number" class="reps" name="quantity" min="1" max="999" value="10"> Reps <input type="number" class="weight" name="diff" min="0" max="999" value="100"> lbs.
+                    <input type="number" class="reps" name="quantity" min="1" max="999" placeholder="10"> Reps <input type="number" class="weight" name="diff" min="0" max="999" placeholder="100"> lbs.
                   </div>
                 </td>
               </tr>
