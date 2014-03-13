@@ -463,20 +463,30 @@ a:hover {
 }
 
 #formDiv {
+  
+}
+
+#username-form {
   margin-left: 3vw;
   margin-right: 3vw;
   margin-top: 5vh;
 }
 
 #signupCont {
-  height: 10vh;
   text-align: center;
   padding-bottom: 2vh;
   margin-top: 5vh;
 }
 
-#orDiv {
+.inOr {
   margin-top: 5vh;
+}
+
+.inOr2{
+
+}
+
+#orDiv {
   text-align: center;
 }
 
@@ -488,11 +498,11 @@ a:hover {
 }
 
 .buttonH {
-  height: 10%;
-  width: 30%;
+  height: 10vh;
+  width: 30vw;
   background-image: none;
   background-color: #ed730e;
-  padding: 2%;
+  padding: 2vh;
   border-radius: 10px;
   margin-right: auto;
   margin-left: auto;
